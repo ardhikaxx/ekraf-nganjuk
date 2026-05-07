@@ -29,7 +29,7 @@ export default function Navbar() {
     <div className="fixed top-0 w-full z-50 px-margin-mobile md:px-margin-desktop pt-6 pointer-events-none">
       <header 
         className={`mx-auto max-w-container-max w-full transition-all duration-500 pointer-events-auto
-          glass-card py-3 px-6 rounded-full shadow-2xl border border-primary/20
+          bg-surface/60 backdrop-blur-3xl py-3 px-6 rounded-full shadow-2xl border border-primary/20
           ${isScrolled ? "scale-[0.98]" : "scale-100"}`}
       >
         <nav className="flex justify-between items-center gap-4">
@@ -46,7 +46,7 @@ export default function Navbar() {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2 bg-surface-container/40 backdrop-blur-md p-1 rounded-full border border-outline-variant/20 shadow-inner">
+          <div className="hidden lg:flex items-center gap-2 p-1 rounded-full">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -55,13 +55,13 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-6 py-2 rounded-full font-label-caps text-label-caps transition-all duration-300 relative group
                     ${isActive
-                      ? "bg-primary text-primary-container shadow-md"
+                      ? "text-primary"
                       : "text-on-surface-variant hover:text-on-surface"
                     }`}
                 >
                   {link.name}
-                  {!isActive && (
-                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-1/3 group-hover:-translate-x-1/2"></span>
+                  {isActive && (
+                    <span className="absolute bottom-1 left-1/2 w-4 h-0.5 bg-primary -translate-x-1/2 rounded-full"></span>
                   )}
                 </Link>
               );
