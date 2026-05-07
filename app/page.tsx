@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
+  const testimonialText = "Portal Ekonomi Kreatif Nganjuk has been a game-changer for my fashion label. It didn't just give us a platform to sell, but a community to grow and innovate together with other creators.";
   const [activeTab, setActiveTab] = useState<"entrepreneur" | "admin">("entrepreneur");
 
   return (
@@ -253,8 +254,11 @@ export default function Home() {
               <span className="material-symbols-outlined text-6xl text-primary/20 absolute top-8 left-8">
                 format_quote
               </span>
-              <p className="font-body-lg text-body-lg text-on-surface italic relative z-10">
-                &quot;Portal Ekonomi Kreatif Nganjuk has been a game-changer for my fashion label. It didn&apos;t just give us a platform to sell, but a community to grow and innovate together with other creators.&quot;
+              <p 
+                suppressHydrationWarning
+                className="font-body-lg text-body-lg text-on-surface italic relative z-10"
+              >
+                &quot;{testimonialText}&quot;
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
