@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | Ekraf Nganjuk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131315;
+            color: #e4e2e4;
+        }
+        .glass-card {
+            background: rgba(31, 31, 33, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(68, 71, 77, 0.2);
+            border-top: 1px solid rgba(185, 199, 228, 0.1);
+            border-left: 1px solid rgba(185, 199, 228, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "inverse-primary": "#515f78",
+                    "on-tertiary-fixed": "#001c39",
+                    "on-tertiary": "#00315d",
+                    "surface": "#131315",
+                    "surface-container-highest": "#343536",
+                    "on-secondary-fixed-variant": "#264191",
+                    "tertiary-container": "#001934",
+                    "on-secondary-container": "#9db2ff",
+                    "on-primary-container": "#74829d",
+                    "surface-container": "#1f1f21",
+                    "background": "#131315",
+                    "on-primary": "#233148",
+                    "inverse-on-surface": "#303032",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-secondary": "#05297a",
+                    "primary": "#b9c7e4",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-container": "#3984d6",
+                    "secondary-fixed-dim": "#b6c4ff",
+                    "inverse-surface": "#e4e2e4",
+                    "on-surface": "#e4e2e4",
+                    "secondary": "#b6c4ff",
+                    "surface-tint": "#b9c7e4",
+                    "primary-container": "#0a192f",
+                    "surface-container-lowest": "#0e0e10",
+                    "tertiary-fixed-dim": "#a4c9ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#39393b",
+                    "surface-variant": "#343536",
+                    "secondary-container": "#264191",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#0d1c32",
+                    "tertiary-fixed": "#d4e3ff",
+                    "outline-variant": "#44474d",
+                    "tertiary": "#a4c9ff",
+                    "surface-container-low": "#1b1b1d",
+                    "secondary-fixed": "#dce1ff",
+                    "on-surface-variant": "#c5c6cd",
+                    "on-secondary-fixed": "#00164e",
+                    "outline": "#8f9097",
+                    "on-tertiary-fixed-variant": "#004883",
+                    "surface-dim": "#131315",
+                    "on-background": "#e4e2e4",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "surface-container-high": "#2a2a2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"], "label-caps": ["Inter"], "h3": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 shadow-xl flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-4">
+<h3 class="font-h3 text-h3 text-tertiary-fixed-dim font-bold tracking-tight">Admin Panel</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-60">Creative Hub</p>
+</div>
+<nav class="flex-grow flex flex-col gap-2">
+<!-- Active Tab: Dashboard -->
+<a class="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-caps text-label-caps">Analytics</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-caps text-label-caps">Sectors</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-caps text-label-caps">Entrepreneurs</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-caps text-label-caps">Reports</span>
+</a>
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 pt-4 border-t border-outline-variant/10">
+<a class="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-caps text-label-caps">Support</span>
+</a>
+<a class="text-error hover:bg-error-container/20 rounded-xl flex items-center gap-3 p-3 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-caps text-label-caps">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Header -->
+<header class="sticky top-0 z-40 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 px-margin-desktop py-4 flex justify-between items-center">
+<div class="flex items-center gap-gutter w-1/2">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary transition-all placeholder:text-on-surface-variant/50" placeholder="Cari pelaku ekraf, laporan, atau sektor..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-outline-variant/20">
+<div class="text-right">
+<p class="font-label-caps text-label-caps text-on-surface">Admin Utama</p>
+<p class="text-[10px] text-on-surface-variant">Disperindag Nganjuk</p>
+</div>
+<img alt="Admin Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary/20" data-alt="A professional headshot of a middle-aged male government official wearing a clean white shirt. The background is a soft-focus modern office environment with subtle blue and grey tones. The lighting is bright and even, conveying a sense of transparency and leadership. The image style is polished, corporate, and trustworthy, matching a premium government dashboard aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbe_-CVnnEsWyzjds9BFyUeB_T9A_VLZr1H2tEM3dVFsJwC99qRGBTPU5MW7VDpRJH_nNDs_-6JXHzPIlLW88EzLzIi9xbNnzOwCaW6zXIIdjWLl-qh7jNAeGJTy7X3F8AHaNfdUJHAo0DFTkEKyY0y6lmo1G8DT1wdXx6yHuPhd6DYfDSyA9CWNu9E_quSYAPgPTM_NueUtO9xdFypx6dlotROxWLr7EHn5BM7zcpy5sGHulib3KQPSCM2AUJfhz7pXL1Ky_DY-S"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="px-margin-desktop py-8 max-w-container-max mx-auto space-y-gutter">
+<!-- Page Title & CTA -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-h2 text-h2 text-on-surface">Dashboard Overview</h1>
+<p class="text-on-surface-variant mt-1">Pantau performa ekonomi kreatif Nganjuk secara real-time.</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-tertiary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Tambah Pelaku Ekraf
+                </button>
+</div>
+<!-- Stat Cards: Bento Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="glass-card p-6 rounded-2xl group hover:border-primary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-container rounded-xl text-primary">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-green-400 text-[12px] font-bold flex items-center">+12% <span class="material-symbols-outlined text-[14px]">trending_up</span></span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-1">Total Entrepreneurs</p>
+<h2 class="font-h1 text-h2">1,284</h2>
+</div>
+<div class="glass-card p-6 rounded-2xl group hover:border-tertiary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-container rounded-xl text-tertiary">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+</div>
+<span class="text-on-surface-variant text-[12px]">17 Sektor</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-1">Total Categories</p>
+<h2 class="font-h1 text-h2">42</h2>
+</div>
+<div class="glass-card p-6 rounded-2xl group hover:border-secondary/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container rounded-xl text-secondary">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+<span class="text-primary text-[12px] font-bold">Bulan Ini</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-1">New Registrations</p>
+<h2 class="font-h1 text-h2">86</h2>
+</div>
+<div class="glass-card p-6 rounded-2xl group hover:border-primary-fixed-dim/50 transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-surface-container-highest rounded-xl text-on-surface">
+<span class="material-symbols-outlined" data-icon="show_chart">show_chart</span>
+</div>
+<span class="text-green-400 text-[12px] font-bold">Stable</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-1">Growth Rate</p>
+<h2 class="font-h1 text-h2">8.4%</h2>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Main Line Chart (Placeholder Visual) -->
+<div class="lg:col-span-2 glass-card p-8 rounded-3xl relative overflow-hidden">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-h3 text-h3">Pertumbuhan Pelaku Ekraf</h3>
+<p class="text-on-surface-variant text-body-md">Data registrasi per bulan tahun 2024</p>
+</div>
+<select class="bg-surface-container-high border-none rounded-lg text-label-caps px-4 py-2 focus:ring-1 focus:ring-primary">
+<option>Yearly</option>
+<option>Monthly</option>
+</select>
+</div>
+<!-- Chart Graphic Mockup -->
+<div class="h-64 flex items-end justify-between gap-4 pt-4">
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-[40%] hover:bg-primary/30 transition-all">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-bright p-1 rounded text-[10px]">Jan: 42</div>
+</div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-[55%] hover:bg-primary/30 transition-all"></div>
+<div class="w-full bg-primary/10 rounded-t-lg relative group h-[45%] hover:bg-primary/30 transition-all"></div>
+<div class="w-full bg-primary/20 rounded-t-lg relative group h-[70%] hover:bg-primary/40 transition-all"></div>
+<div class="w-full bg-primary/20 rounded-t-lg relative group h-[60%] hover:bg-primary/40 transition-all"></div>
+<div class="w-full bg-primary/30 rounded-t-lg relative group h-[85%] hover:bg-primary/50 transition-all"></div>
+<div class="w-full bg-primary/40 rounded-t-lg relative group h-[95%] hover:bg-primary/60 transition-all border-t-2 border-primary"></div>
+</div>
+<div class="flex justify-between mt-4 text-on-surface-variant font-label-caps text-[10px]">
+<span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MEI</span><span>JUN</span><span>JUL</span>
+</div>
+</div>
+<!-- Pie Chart / Sector Distribution -->
+<div class="glass-card p-8 rounded-3xl flex flex-col">
+<h3 class="font-h3 text-h3 mb-2">Distribusi Sektor</h3>
+<p class="text-on-surface-variant text-body-md mb-8">Sektor paling dominan</p>
+<div class="flex-grow flex items-center justify-center relative">
+<!-- Circle Mockup -->
+<div class="w-40 h-40 rounded-full border-[16px] border-primary/20 relative flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border-[16px] border-primary border-t-transparent border-r-transparent -rotate-45"></div>
+<div class="text-center">
+<span class="block font-h2 text-h2">17</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Sectors</span>
+</div>
+</div>
+</div>
+<div class="space-y-3 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-body-md">Kuliner</span>
+</div>
+<span class="font-bold">38%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-body-md">Kriya &amp; Batik</span>
+</div>
+<span class="font-bold">24%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="text-body-md">Digital Arts</span>
+</div>
+<span class="font-bold">18%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity & Table Section -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter">
+<!-- Data Table -->
+<div class="xl:col-span-2 glass-card rounded-3xl overflow-hidden">
+<div class="p-8 flex justify-between items-center border-b border-outline-variant/20">
+<h3 class="font-h3 text-h3">Daftar Pelaku Ekraf</h3>
+<div class="flex gap-4">
+<button class="p-2 bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container-high rounded-lg hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50">
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant">Entrepreneur</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant">Sektor</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant">Status</th>
+<th class="px-8 py-4 font-label-caps text-label-caps text-on-surface-variant">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center font-bold text-primary">BM</div>
+<div>
+<p class="font-bold">Batik Sedudo Makmur</p>
+<p class="text-[12px] text-on-surface-variant">Nganjuk Kota</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-tertiary-container/30 text-tertiary rounded-full text-[12px]">Kriya &amp; Batik</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2 text-green-400">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-[12px] font-semibold">Verified</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center font-bold text-secondary">CS</div>
+<div>
+<p class="font-bold">Cyber Studio Nganjuk</p>
+<p class="text-[12px] text-on-surface-variant">Loceret</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-secondary-container/30 text-secondary rounded-full text-[12px]">Aplikasi &amp; Games</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[12px] font-semibold">Pending</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-on-surface-variant/20 flex items-center justify-center font-bold text-on-surface-variant">KN</div>
+<div>
+<p class="font-bold">Kuliner Nusantara Jaya</p>
+<p class="text-[12px] text-on-surface-variant">Kertosono</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant rounded-full text-[12px]">Kuliner</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2 text-error">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-[12px] font-semibold">Rejected</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span></button>
+<button class="p-2 hover:bg-surface-container-highest rounded-lg transition-colors text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Recent Activity List -->
+<div class="glass-card rounded-3xl p-8">
+<h3 class="font-h3 text-h3 mb-6">Recent Activity</h3>
+<div class="space-y-6 relative before:absolute before:left-[19px] before:top-4 before:bottom-4 before:w-[2px] before:bg-outline-variant/20">
+<div class="relative flex gap-6 items-start group">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center z-10 border-4 border-surface shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-[18px]" data-icon="person_add">person_add</span>
+</div>
+<div>
+<p class="text-body-md font-bold">Pendaftaran Baru</p>
+<p class="text-[12px] text-on-surface-variant">"Kerajinan Bambu Jaya" mendaftar di sektor Kriya.</p>
+<p class="text-[10px] text-primary mt-1">2 Menit yang lalu</p>
+</div>
+</div>
+<div class="relative flex gap-6 items-start group">
+<div class="w-10 h-10 rounded-full bg-tertiary flex items-center justify-center z-10 border-4 border-surface shadow-lg">
+<span class="material-symbols-outlined text-on-tertiary text-[18px]" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-body-md font-bold">Verifikasi Disetujui</p>
+<p class="text-[12px] text-on-surface-variant">"Kopi Anjuk Ladang" telah diverifikasi sebagai pelaku ekraf.</p>
+<p class="text-[10px] text-primary mt-1">1 Jam yang lalu</p>
+</div>
+</div>
+<div class="relative flex gap-6 items-start group">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center z-10 border-4 border-surface shadow-lg text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="update">update</span>
+</div>
+<div>
+<p class="text-body-md font-bold">Update Profil</p>
+<p class="text-[12px] text-on-surface-variant">"Desain Grafis Nganjuk" memperbarui portofolio produk.</p>
+<p class="text-[10px] text-primary mt-1">5 Jam yang lalu</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 border border-outline-variant/30 rounded-xl text-label-caps font-label-caps hover:bg-surface-container-high transition-colors">
+                        View All Activity
+                    </button>
+</div>
+</div>
+</div>
+<!-- Footer Anchor -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/30 mt-gutter">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto items-center">
+<div>
+<h2 class="font-h2 text-h2 text-primary-fixed-dim">Ekraf Nganjuk</h2>
+<p class="text-on-surface-variant text-body-md mt-2">Membangun ekosistem ekonomi kreatif yang inklusif dan berkelanjutan.</p>
+</div>
+<div class="flex flex-col md:items-center gap-2">
+<p class="font-label-caps text-label-caps text-on-surface">Quick Links</p>
+<div class="flex flex-col md:items-center gap-1">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors text-body-md" href="#">Contact Support</a>
+</div>
+</div>
+<div class="md:text-right">
+<p class="text-on-surface-variant text-body-md">© 2024 Pemerintah Kabupaten Nganjuk. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

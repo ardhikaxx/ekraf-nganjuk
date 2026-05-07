@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | Ekraf Nganjuk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "inverse-primary": "#515f78",
+                    "on-tertiary-fixed": "#001c39",
+                    "on-tertiary": "#00315d",
+                    "surface": "#131315",
+                    "surface-container-highest": "#343536",
+                    "on-secondary-fixed-variant": "#264191",
+                    "tertiary-container": "#001934",
+                    "on-secondary-container": "#9db2ff",
+                    "on-primary-container": "#74829d",
+                    "surface-container": "#1f1f21",
+                    "background": "#131315",
+                    "on-primary": "#233148",
+                    "inverse-on-surface": "#303032",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-secondary": "#05297a",
+                    "primary": "#b9c7e4",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-container": "#3984d6",
+                    "secondary-fixed-dim": "#b6c4ff",
+                    "inverse-surface": "#e4e2e4",
+                    "on-surface": "#e4e2e4",
+                    "secondary": "#b6c4ff",
+                    "surface-tint": "#b9c7e4",
+                    "primary-container": "#0a192f",
+                    "surface-container-lowest": "#0e0e10",
+                    "tertiary-fixed-dim": "#a4c9ff",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#39393b",
+                    "surface-variant": "#343536",
+                    "secondary-container": "#264191",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#0d1c32",
+                    "tertiary-fixed": "#d4e3ff",
+                    "outline-variant": "#44474d",
+                    "tertiary": "#a4c9ff",
+                    "surface-container-low": "#1b1b1d",
+                    "secondary-fixed": "#dce1ff",
+                    "on-surface-variant": "#c5c6cd",
+                    "on-secondary-fixed": "#00164e",
+                    "outline": "#8f9097",
+                    "on-tertiary-fixed-variant": "#004883",
+                    "surface-dim": "#131315",
+                    "on-background": "#e4e2e4",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "surface-container-high": "#2a2a2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 33, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(185, 199, 228, 0.1);
+            border-left: 1px solid rgba(185, 199, 228, 0.1);
+        }
+        .bg-gradient-mesh {
+            background: radial-gradient(circle at 0% 0%, #0a192f 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, #264191 0%, transparent 50%),
+                        #131315;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface selection:bg-primary selection:text-primary-container bg-gradient-mesh min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-md">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-h3 text-h3 font-bold text-primary tracking-tight">Ekraf Nganjuk</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Catalog</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps" href="#">Gallery</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 transition-transform duration-300 active:scale-95">Register</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto">
+<!-- Step Indicator -->
+<div class="mb-12">
+<div class="flex items-center justify-between relative">
+<!-- Line -->
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -z-10 -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-0 w-1/3 h-0.5 bg-primary -z-10 -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary text-primary-container flex items-center justify-center font-bold shadow-[0_0_20px_rgba(185,199,228,0.4)]">1</div>
+<span class="font-label-caps text-label-caps text-primary">Personal</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface-variant flex items-center justify-center font-bold">2</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Business</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface-variant flex items-center justify-center font-bold">3</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Assets</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant text-on-surface-variant flex items-center justify-center font-bold">4</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Review</span>
+</div>
+</div>
+</div>
+<!-- Registration Form Card -->
+<div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+<!-- Background Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<header class="mb-10 text-center">
+<h1 class="font-h2 text-h2 text-on-surface mb-2">Join the Creative Hub</h1>
+<p class="text-on-surface-variant font-body-md">Empower your creative business in the heart of Nganjuk.</p>
+</header>
+<form class="space-y-8">
+<!-- Step 1 Content: Personal Info -->
+<div class="space-y-6">
+<div class="grid grid-cols-1 gap-6">
+<!-- Full Name -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-primary mb-2 ml-1">Full Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-on-surface placeholder:text-on-surface-variant/40" placeholder="e.g. Ahmad Fauzi" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-primary mb-2 ml-1">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-on-surface placeholder:text-on-surface-variant/40" placeholder="ahmad@creative.com" type="email"/>
+</div>
+</div>
+<!-- Phone Number -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-primary mb-2 ml-1">Phone Number</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">call</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-low border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-on-surface placeholder:text-on-surface-variant/40" placeholder="+62 812-XXXX-XXXX" type="tel"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="pt-8 flex justify-between items-center border-t border-outline-variant/20">
+<button class="text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                            Cancel
+                        </button>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-10 py-4 rounded-full font-label-caps text-label-caps font-extrabold shadow-[0_10px_30px_rgba(38,65,145,0.4)] hover:scale-105 transition-transform duration-300 active:scale-95 flex items-center gap-2" type="button">
+                            Next Step
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Bento Preview Section (Social Proof / Context) -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card p-8 rounded-3xl flex flex-col justify-between overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="A modern, high-tech creative studio in Nganjuk with young designers working on digital art projects. The environment is dark and sleek with glowing blue accents and high-end computer displays. Cinematic lighting creates a sense of focused innovation and professional excellence within the creative hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNidFitoGv0xKD2sHbLeAYwq4sFkxot5YtsEZhMiniF4kq3eVTuFgih9ATH_dQqj2U-IZm-I3rGRKMJDovoc-NJNhBl7gVJDXtTeDxcKR9U7jql4qyNTUxQ9YHSsIoF0vNVsXLOnM5axOL9bjBYDb-0-gB6t3Nn9Q0cx-ifY1mYYQ-tQ1OYjawz41pQ_5wua7VIAlo_umxFHKeXFipRYtrJELKpz7KFQmdgvq6ZM0a7DvxI9iQUtW0TlZPGWt1v_ukmOtkLvvsCdPZ"/>
+<div class="relative z-10">
+<h3 class="font-h3 text-h3 text-primary mb-4">Why Join Ekraf?</h3>
+<p class="text-on-surface-variant font-body-md mb-6 max-w-md">Gain access to exclusive government funding, mentorship programs, and a network of 500+ creative entrepreneurs in East Java.</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-label-caps">Network</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-caps text-label-caps">Grants</span>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20 text-tertiary font-label-caps text-label-caps">Exhibition</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl border border-primary/20 bg-primary-container/40 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">verified</span>
+</div>
+<h4 class="font-h3 text-h3 text-on-surface mb-2">Government Verified</h4>
+<p class="text-on-surface-variant font-body-md">Official platform supported by Dinas Pariwisata &amp; Kebudayaan Nganjuk.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-12 border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="font-h2 text-h2 text-primary-fixed-dim">Ekraf Nganjuk</div>
+<p class="text-on-surface-variant max-w-xs font-body-md">Pusat pengembangan ekonomi kreatif Kabupaten Nganjuk untuk masa depan digital Indonesia.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-primary font-bold font-label-caps text-label-caps mb-2">Links</h4>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-primary font-bold font-label-caps text-label-caps mb-2">Location</h4>
+<p class="text-on-surface-variant font-body-md">Jl. Basuki Rahmat No. 1,<br/>Nganjuk, Jawa Timur 64411</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">language</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">mail</span>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center text-on-surface-variant border-t border-outline-variant/10 pt-8 font-label-caps text-label-caps">
+            © 2024 Pemerintah Kabupaten Nganjuk. All Rights Reserved.
+        </div>
+</footer>
+<!-- Potential Success Modal State (Hidden by default, structure for future integration) -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-background/80 backdrop-blur-md hidden" id="success-modal">
+<div class="glass-card max-w-md w-full p-10 rounded-3xl text-center border-primary/40 shadow-[0_0_100px_rgba(185,199,228,0.2)]">
+<div class="w-24 h-24 bg-primary text-primary-container rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<h2 class="font-h1 text-h2 text-on-surface mb-4">Registration Successful!</h2>
+<p class="text-on-surface-variant font-body-lg mb-8">Welcome to the family. Your profile is being reviewed by the Creative Board. You'll receive an email shortly.</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-label-caps text-label-caps font-extrabold hover:scale-105 transition-transform">Go to Dashboard</button>
+</div>
+</div>
+</body></html>

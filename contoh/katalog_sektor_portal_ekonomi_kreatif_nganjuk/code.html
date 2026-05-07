@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Katalog Sektor Ekonomi Kreatif - Ekraf Nganjuk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "inverse-primary": "#515f78",
+            "on-tertiary-fixed": "#001c39",
+            "on-tertiary": "#00315d",
+            "surface": "#131315",
+            "surface-container-highest": "#343536",
+            "on-secondary-fixed-variant": "#264191",
+            "tertiary-container": "#001934",
+            "on-secondary-container": "#9db2ff",
+            "on-primary-container": "#74829d",
+            "surface-container": "#1f1f21",
+            "background": "#131315",
+            "on-primary": "#233148",
+            "inverse-on-surface": "#303032",
+            "on-primary-fixed-variant": "#39475f",
+            "on-secondary": "#05297a",
+            "primary": "#b9c7e4",
+            "primary-fixed": "#d6e3ff",
+            "on-tertiary-container": "#3984d6",
+            "secondary-fixed-dim": "#b6c4ff",
+            "inverse-surface": "#e4e2e4",
+            "on-surface": "#e4e2e4",
+            "secondary": "#b6c4ff",
+            "surface-tint": "#b9c7e4",
+            "primary-container": "#0a192f",
+            "surface-container-lowest": "#0e0e10",
+            "tertiary-fixed-dim": "#a4c9ff",
+            "on-error-container": "#ffdad6",
+            "surface-bright": "#39393b",
+            "surface-variant": "#343536",
+            "secondary-container": "#264191",
+            "on-error": "#690005",
+            "on-primary-fixed": "#0d1c32",
+            "tertiary-fixed": "#d4e3ff",
+            "outline-variant": "#44474d",
+            "tertiary": "#a4c9ff",
+            "surface-container-low": "#1b1b1d",
+            "secondary-fixed": "#dce1ff",
+            "on-surface-variant": "#c5c6cd",
+            "on-secondary-fixed": "#00164e",
+            "outline": "#8f9097",
+            "on-tertiary-fixed-variant": "#004883",
+            "surface-dim": "#131315",
+            "on-background": "#e4e2e4",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#b9c7e4",
+            "surface-container-high": "#2a2a2c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "margin-desktop": "48px",
+            "unit": "8px",
+            "gutter": "24px",
+            "container-max": "1280px"
+          },
+          "fontFamily": {
+            "h1": ["Inter"],
+            "label-caps": ["Inter"],
+            "h3": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "h2": ["Inter"]
+          },
+          "fontSize": {
+            "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "h2": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(31, 31, 33, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(143, 144, 151, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(96, 165, 250, 0.4);
+      transform: translateY(-8px);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(38, 65, 145, 0.15) 0%, rgba(10, 25, 47, 0) 70%);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-md">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-h3 text-h3 font-bold text-primary tracking-tight">Ekraf Nganjuk</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps uppercase" href="#">Catalog</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps uppercase" href="#">Gallery</a>
+</div>
+<button class="bg-primary-container text-primary border border-primary/20 px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform duration-300">
+        Register
+      </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section with Search -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-20 relative">
+<div class="absolute inset-0 hero-glow -z-10"></div>
+<div class="max-w-3xl">
+<h1 class="font-h1 text-h1 text-primary-fixed mb-6">Katalog Sektor Ekonomi Kreatif</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Jelajahi ekosistem kreatif Nganjuk melalui 17 subsektor unggulan. Temukan inovasi, karya seni, dan peluang kolaborasi bersama para pelaku industri lokal.</p>
+<div class="relative group">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-high border-outline-variant/30 border text-on-surface rounded-full py-5 pl-16 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-on-surface-variant/50 backdrop-blur-md" placeholder="Cari sektor atau nama pelaku kreatif..." type="text"/>
+<div class="absolute right-4 inset-y-2">
+<button class="h-full px-8 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity">Cari</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="text-tertiary font-label-caps text-label-caps uppercase tracking-widest mb-2 block">Kategori Unggulan</span>
+<h2 class="font-h2 text-h2 text-on-surface">Subsektor Kreatif</h2>
+</div>
+<div class="text-on-surface-variant font-body-md">17 Sektor Tersedia</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Category Card 1 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="restaurant">restaurant</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Kuliner</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">124 Pelaku</p>
+</div>
+<!-- Category Card 2 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="styler">styler</span>
+</div>
+<h3 class="font-h3 text-h3 text-secondary mb-2">Fashion</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">86 Pelaku</p>
+</div>
+<!-- Category Card 3 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="brush">brush</span>
+</div>
+<h3 class="font-h3 text-h3 text-tertiary mb-2">Kriya</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">92 Pelaku</p>
+</div>
+<!-- Category Card 4 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="music_note">music_note</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Musik</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">45 Pelaku</p>
+</div>
+<!-- Category Card 5 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="photo_camera">photo_camera</span>
+</div>
+<h3 class="font-h3 text-h3 text-secondary mb-2">Fotografi</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">38 Pelaku</p>
+</div>
+<!-- Category Card 6 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="design_services">design_services</span>
+</div>
+<h3 class="font-h3 text-h3 text-tertiary mb-2">Desain Grafis</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">61 Pelaku</p>
+</div>
+<!-- Category Card 7 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="movie">movie</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Film &amp; Video</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">29 Pelaku</p>
+</div>
+<!-- Category Card 8 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="devices">devices</span>
+</div>
+<h3 class="font-h3 text-h3 text-secondary mb-2">Aplikasi</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">22 Pelaku</p>
+</div>
+<!-- Category Card 9 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-tertiary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="theater_comedy">theater_comedy</span>
+</div>
+<h3 class="font-h3 text-h3 text-tertiary mb-2">Seni Tari</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">54 Pelaku</p>
+</div>
+<!-- Category Card 10 -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="architecture">architecture</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Arsitektur</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">19 Pelaku</p>
+</div>
+</div>
+</section>
+<!-- Featured Entrepreneurs Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-h2 text-h2 text-on-surface">Pelaku Kreatif Unggulan</h2>
+<button class="text-primary hover:text-primary-fixed transition-colors flex items-center gap-2 group">
+          Lihat Semua Pelaku 
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Entrepreneur Card 1 -->
+<div class="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
+<div class="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a skilled craftsperson in a sunlit studio, surrounded by artisanal leather goods and traditional tools. The lighting is warm and cinematic, highlighting textures of natural materials and fine craftsmanship. The background is softly blurred to focus on the creator's proud and welcoming expression, representing the vibrant creative community of Nganjuk with a professional and authentic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1ud6Bc-lC2wA8VElbQ2gEtYNWzMkcomajdmV7uK9XPBv2A7PlCqXOEaZN96QnyGfb0Ny28ehHjmsThk-JwoMkHRBN83669FnqYaU8ajjDU3TX9E01IcTLVlozXV0bvJgHefktchTG5FbO0Ja7kRkcs0DLMTyT3dGmZyQQMhX88zRd6Tjh81qowAwf5RFfsy1QmKw-Hw_sys158XGg6qLDo0iv2ZfWfRBFMZ9JZKcs0Ce4vIyE7uxDGdYI_2ZvlNdasz_vFP4ee8xm"/>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-primary">Anjuk Craft Studio</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kriya</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-4">Pemilik: Ahmad Fauzi</p>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-6">Spesialis kerajinan kulit tradisional Nganjuk dengan sentuhan desain modern minimalis untuk pasar ekspor.</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-xs">Loceret, Nganjuk</span>
+</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Entrepreneur Card 2 -->
+<div class="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
+<div class="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern coffee shop interior with sleek industrial design and soft ambient lighting. The scene features a barista expertly preparing a beverage, surrounded by high-end coffee equipment and lush green plants. Large windows reveal a glimpse of a bustling urban street, while the overall mood is inviting and sophisticated, perfectly capturing the premium creative culinary culture of the Nganjuk region." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATNt01RLVkGEqzExl560AZH4vx6AVDU9bDtshZ-I9OvN_PDbmVIalzWn-pHHRyyFoOz85IZA7OIIWRbQ6hb8T12M4i4--BxKX-R5abMVhoKVC8_QpnLvPLzdR09Oy8vzO6mYXrTG8p_s7HxY4RW3QN-HC-4Y2goZhOKvBp3sYnNF2UK2zj_VeGY-6haBYYdGXjm2zOQL2UV20jjttiuR-h29hJGUFEdx_ITAjraH50eiH2J31OLaYbqMvIlLTh3Aa8Tm_TDDWwolQU"/>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-secondary">Kopi Wilis Blend</h3>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Kuliner</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-4">Pemilik: Siti Rahmawati</p>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-6">Roastery kopi lokal yang memberdayakan petani kopi lereng Gunung Wilis dengan teknik roasting specialty.</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-xs">Sawahan, Nganjuk</span>
+</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Entrepreneur Card 3 -->
+<div class="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
+<div class="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist workspace featuring high-end digital design tools, including a large monitor displaying vibrant graphic art and a drawing tablet. The room is softly lit with cool blue and purple neon accents, creating a high-tech studio environment. The aesthetic is ultra-modern and professional, showcasing the cutting-edge digital creativity and innovation happening in the Nganjuk creative economy sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmkjGRKRMuJF6BYvlJapwK1PkMY4yV5v9SWZQloPa4TsBTI1V0V9St1OPRWmlOgqc236awMbN2CINLmqCZO-DQpFhc3WSCFjgJc86iXT29CLAR7GG5gQPpYFSJjm0Cdj_xtfE4Zovvq91D9LMUhgN6BBYWg0TOGF1zjKU1fuaonEWoUsnhwgH7OJ78oSDscxJCGs9Aae-aq3DRvm9RXh326dk_pR8qAdoWF-vnkDl2LfgrUliSV-3qtzHI7tWtLisjILZ8m-_vbajp"/>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-tertiary">Digital Nganjuk Hub</h3>
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Aplikasi</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-4">Pemilik: Kevin Sanjaya</p>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-6">Startup pengembang solusi digital untuk UMKM lokal, mulai dari e-commerce hingga sistem manajemen inventori.</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-xs">Kertosono, Nganjuk</span>
+</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="code">code</span></a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+</div>
+</div>
+</div>
+</div>
+<!-- Entrepreneur Card 4 -->
+<div class="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
+<div class="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-fashion photography session in an industrial loft space with dramatic shadows and sharp focus. The scene features avant-garde clothing with intricate textures and bold colors, set against a background of aged brick and metallic structures. The lighting is editorial and sophisticated, reflecting a professional and world-class fashion industry aesthetic within the local Nganjuk creative landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLaqIj8A_7FqFeYqOB-ZXSqs930dalWwUnK0Oy8No3sINlDBPP_ynrVRY3ao17YaeNfuCjBV3rl8HBf6MdrPxJ-N2VT7VpIPAY71qg_RReS0IaKkrVn1x_8oW7tmvshL1148LmnijEHxjt37yOlpGd7lkvfuJ-8DuEbay_QKnJ1qXpoGBjbJx0XZ6ss8YU5aYLKD9ZPRJnZW3XrMQKnVemJ_9XXkUyYML3VIS0K0fSS3-CCc0g6x-kjzZW03vqV4KtxOypsmumrq6y"/>
+</div>
+<div class="p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-primary">Batik Bayu Bersemi</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Fashion</span>
+</div>
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-4">Pemilik: Ibu Hartati</p>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-6">Produsen batik tulis eksklusif dengan motif khas Nganjuk yang telah tampil di berbagai ajang fashion show nasional.</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+<span class="text-xs">Berbek, Nganjuk</span>
+</div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="contact_support">contact_support</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Implementation -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-h2 text-h2 text-primary-fixed-dim mb-4">Ekraf Nganjuk</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">Pusat informasi dan kolaborasi ekosistem ekonomi kreatif Kabupaten Nganjuk.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary font-bold uppercase font-label-caps text-label-caps mb-2">Navigasi</h4>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Katalog Sektor</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Profil Pelaku</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Berita &amp; Acara</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors font-body-md" href="#">Pendaftaran</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary font-bold uppercase font-label-caps text-label-caps mb-2">Kontak Kami</h4>
+<p class="text-on-surface-variant font-body-md">Jl. Basuki Rahmad No. 1, Nganjuk, Jawa Timur</p>
+<p class="text-on-surface-variant font-body-md">Email: info@ekrafnganjuk.id</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="instagram">retweet</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="twitter">retweet</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-12 pt-8 border-t border-outline-variant/10 text-center">
+<p class="text-on-surface-variant font-label-caps text-label-caps">© 2024 Pemerintah Kabupaten Nganjuk. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131315;
+            color: #e4e2e4;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(31, 31, 33, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(143, 144, 151, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-stroke {
+            border-top: 1px solid rgba(185, 199, 228, 0.3);
+            border-left: 1px solid rgba(185, 199, 228, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #b9c7e4 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-blob {
+            background: radial-gradient(circle, rgba(38, 65, 145, 0.15) 0%, rgba(10, 25, 47, 0) 70%);
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#39475f",
+                        "surface-container": "#1f1f21",
+                        "on-secondary": "#05297a",
+                        "on-secondary-fixed": "#00164e",
+                        "on-primary": "#233148",
+                        "tertiary": "#a4c9ff",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1b1b1d",
+                        "surface-container-high": "#2a2a2c",
+                        "secondary-fixed": "#dce1ff",
+                        "on-surface-variant": "#c5c6cd",
+                        "inverse-surface": "#e4e2e4",
+                        "surface-variant": "#343536",
+                        "on-tertiary-container": "#3984d6",
+                        "primary": "#b9c7e4",
+                        "surface-tint": "#b9c7e4",
+                        "on-primary-container": "#74829d",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "on-secondary-container": "#9db2ff",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "primary-container": "#0a192f",
+                        "inverse-on-surface": "#303032",
+                        "on-tertiary": "#00315d",
+                        "on-background": "#e4e2e4",
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#264191",
+                        "on-secondary-fixed-variant": "#264191",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#d6e3ff",
+                        "on-surface": "#e4e2e4",
+                        "surface": "#131315",
+                        "secondary-fixed-dim": "#b6c4ff",
+                        "on-error": "#690005",
+                        "outline": "#8f9097",
+                        "surface-bright": "#39393b",
+                        "surface-container-highest": "#343536",
+                        "on-tertiary-fixed-variant": "#004883",
+                        "tertiary-container": "#001934",
+                        "on-tertiary-fixed": "#001c39",
+                        "on-primary-fixed": "#0d1c32",
+                        "inverse-primary": "#515f78",
+                        "background": "#131315",
+                        "surface-dim": "#131315",
+                        "secondary": "#b6c4ff",
+                        "outline-variant": "#44474d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-primary-container">
+<!-- Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-md">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-h3 text-h3 font-bold text-primary tracking-tight">Ekraf Nganjuk</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Catalog</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Gallery</a>
+</div>
+<button class="bg-gradient-to-r from-secondary-container to-on-tertiary-container text-white px-6 py-2 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform duration-300 active:scale-95 shadow-lg">
+                Register
+            </button>
+</nav>
+</header>
+<main class="pt-24 relative">
+<div class="bg-gradient-blob w-[600px] h-[600px] -top-48 -left-48"></div>
+<div class="bg-gradient-blob w-[600px] h-[600px] top-1/2 -right-48 opacity-40"></div>
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-20 flex flex-col md:flex-row items-center gap-16">
+<div class="flex-1 space-y-6">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">Pusat Kreativitas Daerah</span>
+<h1 class="font-h1 text-h1">Membangun Masa Depan <span class="gradient-text">Ekonomi Kreatif</span> di Nganjuk.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Portal Ekonomi Kreatif Nganjuk (Ekraf Nganjuk) adalah inisiatif strategis untuk memetakan, memberdayakan, dan mempromosikan seluruh potensi industri kreatif di Kabupaten Nganjuk menuju era digitalisasi global.
+                </p>
+<div class="flex gap-4 pt-4">
+<button class="px-8 py-4 bg-primary text-primary-container rounded-full font-h3 text-body-md font-bold hover:shadow-[0_0_20px_rgba(185,199,228,0.4)] transition-all">Pelajari Lebih Lanjut</button>
+<button class="px-8 py-4 border border-outline-variant text-on-surface rounded-full font-h3 text-body-md hover:bg-surface-container-high transition-all">Kontak Kami</button>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="glass-card glass-stroke rounded-3xl overflow-hidden aspect-video relative z-10">
+<img alt="Collaboration in Nganjuk" class="w-full h-full object-cover opacity-80" data-alt="A high-angle shot of a collaborative workspace in a modern office with glass walls. A diverse group of young creative professionals is gathered around a large wooden table covered with architectural blueprints, digital tablets, and sketches. The lighting is bright and airy with a sophisticated blue-tinted cool atmosphere. The overall style is professional, high-tech, and futuristic, mirroring a digital hub aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTw88q5derlJMMRNzE4Bw3cddZQo3kNy_uZwVc-96gufE1yRLFhhbwVYRjqOqVJPYjMtPeRuGHfzmbY1BE1JBWskFseJr6_mi24msyZTmlHXkvNBRmdp5oTG1CXxTN3V9p0_HLnsX--fjpg4WDPp-UILBR5_tmxstUq2tbN6dTV0pdUHQCHmCKScjR95pduO5HZYy00bloE4cnwOHdkEXiJNdUj-lPszWDGR84-g9e1PZ5p2JpAM7fS535yiPZTBz2OMrA-m0qg4BV"/>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl z-20 border border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="rocket_launch">rocket_launch</span>
+<div>
+<div class="font-h3 text-h3">17+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Sektor Kreatif</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission (Bento Grid) -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24">
+<div class="text-center mb-16">
+<h2 class="font-h2 text-h2 mb-4">Visi &amp; Misi Kami</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Landasan kami dalam mendorong pertumbuhan ekonomi berbasis kreativitas dan kearifan lokal.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card glass-stroke p-12 rounded-[2rem] flex flex-col justify-between group hover:scale-[1.02] transition-all duration-500">
+<div>
+<span class="material-symbols-outlined text-primary text-5xl mb-8" data-icon="visibility">visibility</span>
+<h3 class="font-h2 text-h2 mb-4">Visi Utama</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            "Menjadikan Kabupaten Nganjuk sebagai pusat keunggulan ekonomi kreatif di Jawa Timur yang berbasis pada kemandirian digital, kolaborasi lintas sektor, dan pelestarian identitas budaya lokal pada tahun 2029."
+                        </p>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="star" data-weight="fill">star</span>
+</div>
+<span class="font-label-caps text-label-caps">Visi Strategis 2029</span>
+</div>
+</div>
+<div class="space-y-gutter">
+<div class="glass-card glass-stroke p-8 rounded-[2rem] hover:scale-[1.02] transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary mb-4" data-icon="groups">groups</span>
+<h4 class="font-h3 text-h3 mb-2">Kolaborasi</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Menciptakan ekosistem inklusif bagi seluruh pelaku kreatif.</p>
+</div>
+<div class="glass-card glass-stroke p-8 rounded-[2rem] bg-secondary-container/20 hover:scale-[1.02] transition-all duration-500">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="language">language</span>
+<h4 class="font-h3 text-h3 mb-2">Digitalisasi</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Transformasi karya lokal menuju akses pasar global.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Objectives -->
+<section class="bg-surface-container-low py-32">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col items-start gap-4">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+</div>
+<h3 class="font-h3 text-h3">Empowerment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Memberikan pelatihan, workshop, dan pendampingan berkelanjutan bagi pelaku UMKM kreatif untuk meningkatkan standar kualitas produk.</p>
+</div>
+<div class="flex flex-col items-start gap-4">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-container flex items-center justify-center border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="devices">devices</span>
+</div>
+<h3 class="font-h3 text-h3">Digitalization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Membangun infrastruktur digital yang memudahkan akses data, publikasi karya, dan transaksi ekonomi secara transparan dan efisien.</p>
+</div>
+<div class="flex flex-col items-start gap-4">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="hub">hub</span>
+</div>
+<h3 class="font-h3 text-h3">Networking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Menghubungkan talenta lokal dengan investor, mentor, dan komunitas kreatif di tingkat nasional maupun internasional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Potensi Daerah Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-32">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1 grid grid-cols-2 gap-4">
+<div class="space-y-4 pt-12">
+<div class="glass-card rounded-2xl overflow-hidden h-64 border-t border-l border-outline-variant/30 shadow-xl">
+<img alt="Batik Nganjuk" class="w-full h-full object-cover" data-alt="Close up of intricate traditional Javanese batik fabric with deep indigo and gold patterns. The lighting is warm and dramatic, highlighting the texture and detail of the wax-resist dyeing technique. The image represents the heritage and artisanal craftsmanship of Nganjuk, presented in a high-end luxury lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJwBFKlF1yf5sXpxZEfPxAH6XSE0Cniq1tkGSoYNDVLA-onRD-MnCpuAZMgL_e6eTPeb_BqZ1tvdey6YvVJNkKLfdmHIiGoyaVVrekX1sTZrLZ7OD4GvUNv7oZv7Vs458a5SP0kV27SjOW6BZRw4hLKYpZg-ePzQONE5gpk6apggm3aI6pFjk_MgPNHQuOQtNguzTxiVNb3BJfZHRIjqa8pOIiqqynCPMrLKyynDsHinzwGrMOd7lfDkctkv-5fN1n8Hs6cPry6qME"/>
+</div>
+<div class="bg-primary/10 rounded-2xl p-6 border border-primary/20">
+<h4 class="font-h3 text-h3 text-primary">85%</h4>
+<p class="font-label-caps text-label-caps">Pertumbuhan Talenta Digital</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="glass-card rounded-2xl overflow-hidden h-96 border-t border-l border-outline-variant/30 shadow-xl">
+<img alt="Nganjuk Digital Arts" class="w-full h-full object-cover" data-alt="A modern digital dashboard with vibrant graphs and charts displayed on multiple high-resolution monitors in a dimly lit, futuristic tech hub. The color palette is dominated by deep blues, teals, and white accents. Reflections of the glowing screens can be seen on a polished black glass desk, creating a sense of sophisticated data-driven innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl-CfvOn4z4EazCbF73BvEJB7esw1OZpCNCZjh7wrxU6ghX2dGJHPqOC_BpKs2ordTlMpJhMUkotWsYSSYRimOGg9eF9M-r84DKUpNgmsnAo3Bgq_E9OZVuMRgo6-Cji7lE1VoQLPLXN_Ymj8fOWDzdmsBvcGSnIoR-f97VHku7-HzOsOACQfoS5F5L33iApU-bWeNZnPs41dGDLwbrnzpkXdBcpD9Qakbcxz75h2cb3laCJgMbFIXS_S96uQy3Ne01-6j7BrXHO6M"/>
+</div>
+</div>
+</div>
+<div class="flex-1 space-y-8">
+<h2 class="font-h2 text-h2">Kekuatan <span class="gradient-text">Potensi Lokal</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Nganjuk bukan sekadar wilayah agraris. Kami adalah rumah bagi ribuan pengrajin Batik, animator kelas dunia, dan inovator kuliner yang menggabungkan resep warisan dengan presentasi modern.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 glass-card p-4 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+<span class="font-body-md text-body-md">Local Wisdom &amp; Artisanal Crafts</span>
+</li>
+<li class="flex items-center gap-4 glass-card p-4 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="person_celebrate">person_celebrate</span>
+<span class="font-body-md text-body-md">Young Emerging Talent Pool</span>
+</li>
+<li class="flex items-center gap-4 glass-card p-4 rounded-xl border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary" data-icon="landscape">landscape</span>
+<span class="font-body-md text-body-md">Creative Tourism Destinations</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Government Support -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-32 mb-20">
+<div class="glass-card glass-stroke p-12 rounded-[3rem] text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-primary mb-6 block">Kemitraan Strategis</span>
+<h2 class="font-h2 text-h2 mb-8">Didukung Penuh Oleh Pemerintah Kabupaten Nganjuk</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-12">
+                        Di bawah naungan <strong>Dinas Pariwisata, Kepemudaan, Olahraga, dan Kebudayaan (Disparporabud) Nganjuk</strong>, portal ini menjadi jembatan resmi antara regulasi pemerintah dan kebutuhan nyata para pelaku industri kreatif.
+                    </p>
+<div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+<img alt="Logo Kabupaten Nganjuk" class="h-24 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-EX6MtOmnzWZB9nD5gpDZzEmWxTvgrjIVcIu7bJUW0-YotI41lN7U1La7Rdp-lm63_1seZSv5Pa5kwNR6lng8h5Nh9vCtrS-5liC-kxBMNJ4-mTnXiYMuHMtbVShvbQaOGNe-EffJRpExSyjE7EmenwHwkwL_DvOQp7reEZZo29PlJeMCPwoHP3owX6MIw5qvsA9dwGq7GE2vkNNQG2GdM2Di5-1O0Y7xBzop0OcA7Mamt4tWGb981GCBN_V5CIYQrkHxabliu16E"/>
+<div class="h-16 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="text-left">
+<div class="font-h3 text-h3 text-on-surface">Disparporabud</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Pemerintah Kab. Nganjuk</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 py-20">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2 space-y-6">
+<div class="font-h2 text-h2 text-primary-fixed-dim font-bold">Ekraf Nganjuk</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Inisiatif digital untuk mengakselerasi pertumbuhan ekonomi kreatif di Kabupaten Nganjuk melalui teknologi dan kolaborasi.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Home</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Catalog Produk</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Pendaftaran Pelaku</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Events</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant">© 2024 Pemerintah Kabupaten Nganjuk. All Rights Reserved.</p>
+</div>
+</footer>
+</body></html>
