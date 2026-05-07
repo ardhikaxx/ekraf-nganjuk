@@ -24,7 +24,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-on-background font-body-md selection:bg-primary selection:text-primary-container dark">
+    <div className="min-h-screen bg-background text-on-background font-body-md selection:bg-primary selection:text-primary-container dark overflow-x-hidden">
       <Navbar />
 
       <main className="pt-24 relative">
@@ -134,8 +134,8 @@ export default function AboutPage() {
         </section>
 
         {/* Core Objectives */}
-        <section className="bg-surface-container-low py-32">
-          <div className="max-w-container-max mx-auto px-margin-desktop">
+        <section className="bg-surface-container-low py-24">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {objectives.map((obj) => (
                 <div key={obj.title} className="flex flex-col items-start gap-4">
@@ -155,7 +155,7 @@ export default function AboutPage() {
         </section>
 
         {/* Potensi Daerah Section */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-32">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <div className="flex-1 grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-12">
@@ -216,7 +216,7 @@ export default function AboutPage() {
         </section>
 
         {/* Government Support */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-32 mb-20">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 mb-20">
           <div className="glass-card glass-stroke p-12 rounded-[3rem] text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
             <div className="relative z-10">
