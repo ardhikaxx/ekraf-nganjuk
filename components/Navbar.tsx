@@ -26,7 +26,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="fixed top-0 w-full z-50 px-margin-mobile md:px-margin-desktop pt-6 pointer-events-none">
+    <div className="fixed top-0 w-full z-50 px-4 md:px-12 pt-6 pointer-events-none">
       <header 
         className={`mx-auto max-w-container-max w-full transition-all duration-500 pointer-events-auto
           bg-surface/60 backdrop-blur-3xl py-3 px-6 rounded-full shadow-2xl border border-primary/20
@@ -99,7 +99,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div 
-        className={`lg:hidden fixed inset-x-margin-mobile top-24 pointer-events-auto transition-all duration-500 ease-out
+        className={`lg:hidden fixed inset-x-4 top-24 pointer-events-auto transition-all duration-500 ease-out
           ${isMobileMenuOpen 
             ? "opacity-100 translate-y-0 visible" 
             : "opacity-0 -translate-y-4 invisible"
