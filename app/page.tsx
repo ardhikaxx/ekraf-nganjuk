@@ -254,9 +254,7 @@ export default function Home() {
                 format_quote
               </span>
               <p className="font-body-lg text-body-lg text-on-surface italic relative z-10">
-                &quot;Portal Ekonomi Kreatif Nganjuk has been a game-changer for my fashion label.
-                It didn&apos;t just give us a platform to sell, but a community to grow and innovate
-                together with other creators.&quot;
+                &quot;Portal Ekonomi Kreatif Nganjuk has been a game-changer for my fashion label. It didn&apos;t just give us a platform to sell, but a community to grow and innovate together with other creators.&quot;
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
