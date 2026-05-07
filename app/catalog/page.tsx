@@ -3,8 +3,25 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function CatalogPage() {
+  const [placeholder, setPlaceholder] = useState("Cari sektor...");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setPlaceholder("Cari sektor atau nama pelaku kreatif...");
+      } else {
+        setPlaceholder("Cari sektor...");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const sectors = [
     { icon: "restaurant", name: "Kuliner", count: 124, color: "primary" },
     { icon: "styler", name: "Fashion", count: 86, color: "secondary" },
@@ -63,10 +80,10 @@ export default function CatalogPage() {
 
       <main className="pt-32 pb-24">
         {/* Hero Section with Search */}
-        <section className="max-w-container-max mx-auto px-margin-desktop mb-20 relative">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 md:mb-20 relative">
           <div className="absolute inset-0 hero-glow -z-10"></div>
           <div className="max-w-3xl">
-            <h1 className="font-h1 text-h1 text-primary-fixed mb-6">
+            <h1 className="font-h1 text-[2.5rem] md:text-h1 text-primary-fixed mb-6 leading-tight">
               Katalog Sektor Ekonomi Kreatif
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-10">
@@ -74,16 +91,16 @@ export default function CatalogPage() {
               seni, dan peluang kolaborasi bersama para pelaku industri lokal.
             </p>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-                <span className="material-symbols-outlined text-primary text-2xl">search</span>
+              <div className="absolute inset-y-0 left-4 md:left-6 flex items-center pointer-events-none">
+                <span className="material-symbols-outlined text-primary text-xl md:text-2xl">search</span>
               </div>
               <input
-                className="w-full bg-surface-container-high border-outline-variant/30 border text-on-surface rounded-full py-5 pl-16 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-on-surface-variant/50 backdrop-blur-md"
-                placeholder="Cari sektor atau nama pelaku kreatif..."
+                className="w-full bg-surface-container-high border-outline-variant/30 border text-on-surface rounded-full py-4 md:py-5 pl-10 md:pl-12 pr-6 md:pr-8 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-on-surface-variant/50 backdrop-blur-md text-sm md:text-base"
+                placeholder={placeholder}
                 type="text"
               />
-              <div className="absolute right-4 inset-y-2">
-                <button className="h-full px-8 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity">
+              <div className="absolute right-2 inset-y-2">
+                <button className="h-full px-6 md:px-8 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity">
                   Cari
                 </button>
               </div>
@@ -92,31 +109,31 @@ export default function CatalogPage() {
         </section>
 
         {/* Categories Grid */}
-        <section className="max-w-container-max mx-auto px-margin-desktop mb-24">
-          <div className="flex justify-between items-end mb-12">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 md:mb-24">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
             <div>
-              <span className="text-tertiary font-label-caps text-label-caps uppercase tracking-widest mb-2 block">
+              <span className="text-tertiary font-label-caps text-[10px] md:text-label-caps uppercase tracking-widest mb-2 block">
                 Kategori Unggulan
               </span>
-              <h2 className="font-h2 text-h2 text-on-surface">Subsektor Kreatif</h2>
+              <h2 className="font-h2 text-[2rem] md:text-h2 text-on-surface">Subsektor Kreatif</h2>
             </div>
-            <div className="text-on-surface-variant font-body-md">17 Sektor Tersedia</div>
+            <div className="text-on-surface-variant font-body-md text-sm md:text-base">17 Sektor Tersedia</div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {sectors.map((sector) => (
               <div
                 key={sector.name}
-                className={`glass-card p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300`}
+                className={`glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300`}
               >
                 <div
-                  className={`w-16 h-16 bg-${sector.color}-container rounded-2xl flex items-center justify-center mb-6`}
+                  className={`w-12 h-12 md:w-16 md:h-16 bg-${sector.color}-container rounded-2xl flex items-center justify-center mb-4 md:mb-6`}
                 >
-                  <span className={`material-symbols-outlined text-${sector.color} text-4xl`}>
+                  <span className={`material-symbols-outlined text-${sector.color} text-2xl md:text-4xl`}>
                     {sector.icon}
                   </span>
                 </div>
-                <h3 className={`font-h3 text-h3 text-${sector.color} mb-2`}>{sector.name}</h3>
-                <p className="font-label-caps text-label-caps text-on-surface-variant">
+                <h3 className={`font-h3 text-lg md:text-h3 text-${sector.color} mb-2`}>{sector.name}</h3>
+                <p className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
                   {sector.count} Pelaku
                 </p>
               </div>

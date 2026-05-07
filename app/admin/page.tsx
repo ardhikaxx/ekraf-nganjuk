@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export default function AdminDashboardPage() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const entrepreneurs = [
     {
       name: "Batik Sedudo Makmur",
@@ -61,21 +62,26 @@ export default function AdminDashboardPage() {
   return (
     <div className="min-h-screen bg-background text-on-surface font-body-md dark">
       {/* SideNavBar */}
-      <aside className="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 shadow-xl flex flex-col p-4 gap-2 z-50">
-        <div className="mb-8 px-4">
-          <h3 className="font-h3 text-h3 text-tertiary-fixed-dim font-bold tracking-tight">
-            Admin Panel
-          </h3>
-          <p className="font-label-caps text-label-caps text-on-surface-variant opacity-60">
-            Creative Hub
-          </p>
+      <aside className={`h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 shadow-xl flex flex-col p-4 gap-2 z-50 transition-transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
+        <div className="mb-8 px-4 flex justify-between items-center">
+          <div>
+            <h3 className="font-h3 text-h3 text-tertiary-fixed-dim font-bold tracking-tight">
+              Admin Panel
+            </h3>
+            <p className="font-label-caps text-label-caps text-on-surface-variant opacity-60">
+              Creative Hub
+            </p>
+          </div>
+          <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-on-surface-variant">
+            <span className="material-symbols-outlined">close</span>
+          </button>
         </div>
 
         <nav className="flex-grow flex flex-col gap-2">
           {/* Active Tab: Dashboard */}
           <Link
             href="#"
-            className="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 active:opacity-80 active:scale-98"
+            className="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 p-3 transition-transform duration-300"
           >
             <span className="material-symbols-outlined" data-icon="dashboard">
               dashboard
@@ -85,7 +91,7 @@ export default function AdminDashboardPage() {
 
           <Link
             href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
           >
             <span className="material-symbols-outlined" data-icon="monitoring">
               monitoring
@@ -95,7 +101,7 @@ export default function AdminDashboardPage() {
 
           <Link
             href="/catalog"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
           >
             <span className="material-symbols-outlined" data-icon="category">
               category
@@ -105,45 +111,16 @@ export default function AdminDashboardPage() {
 
           <Link
             href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
           >
             <span className="material-symbols-outlined" data-icon="group">
               group
             </span>
             <span className="font-label-caps text-label-caps">Entrepreneurs</span>
           </Link>
-
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98"
-          >
-            <span className="material-symbols-outlined" data-icon="description">
-              description
-            </span>
-            <span className="font-label-caps text-label-caps">Reports</span>
-          </Link>
-
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1 active:opacity-80 active:scale-98"
-          >
-            <span className="material-symbols-outlined" data-icon="settings">
-              settings
-            </span>
-            <span className="font-label-caps text-label-caps">Settings</span>
-          </Link>
         </nav>
 
         <div className="mt-auto flex flex-col gap-2 pt-4 border-t border-outline-variant/10">
-          <Link
-            href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300"
-          >
-            <span className="material-symbols-outlined" data-icon="help">
-              help
-            </span>
-            <span className="font-label-caps text-label-caps">Support</span>
-          </Link>
           <Link
             href="#"
             className="text-error hover:bg-error-container/20 rounded-xl flex items-center gap-3 p-3 transition-transform duration-300"
@@ -157,38 +134,33 @@ export default function AdminDashboardPage() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="ml-64 min-h-screen">
+      <main className="lg:ml-64 min-h-screen">
         {/* Top Header */}
-        <header className="sticky top-0 z-40 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 px-margin-desktop py-4 flex justify-between items-center">
-          <div className="flex items-center gap-gutter w-1/2">
-            <div className="relative w-full max-w-md">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">
+        <header className="sticky top-0 z-40 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 px-4 md:px-margin-desktop py-4 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden p-2 text-on-surface-variant">
+              <span className="material-symbols-outlined">menu</span>
+            </button>
+            <div className="relative w-full max-w-xs md:max-w-md">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm md:text-base">
                 search
               </span>
               <input
-                className="w-full bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary transition-all placeholder:text-on-surface-variant/50"
-                placeholder="Cari pelaku ekraf, laporan, atau sektor..."
+                className="w-full bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-sm md:text-body-md focus:ring-2 focus:ring-primary transition-all"
+                placeholder="Search..."
                 type="text"
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-6">
-            <button className="relative p-2 text-on-surface-variant hover:text-primary transition-colors">
-              <span className="material-symbols-outlined" data-icon="notifications">
-                notifications
-              </span>
-              <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
-            </button>
-
-            <div className="flex items-center gap-3 pl-6 border-l border-outline-variant/20">
-              <div className="text-right">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
+              <div className="text-right hidden sm:block">
                 <p className="font-label-caps text-label-caps text-on-surface">Admin Utama</p>
-                <p className="text-[10px] text-on-surface-variant">Disperindag Nganjuk</p>
               </div>
               <img
                 alt="Admin Profile"
-                className="w-10 h-10 rounded-full object-cover border-2 border-primary/20"
+                className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-primary/20"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbe_-CVnnEsWyzjds9BFyUeB_T9A_VLZr1H2tEM3dVFsJwC99qRGBTPU5MW7VDpRJH_nNDs_-6JXHzPIlLW88EzLzIi9xbNnzOwCaW6zXIIdjWLl-qh7jNAeGJTy7X3F8AHaNfdUJHAo0DFTkEKyY0y6lmo1G8DT1wdXx6yHuPhd6DYfDSyA9CWNu9E_quSYAPgPTM_NueUtO9xdFypx6dlotROxWLr7EHn5BM7zcpy5sGHulib3KQPSCM2AUJfhz7pXL1Ky_DY-S"
               />
             </div>
@@ -196,7 +168,7 @@ export default function AdminDashboardPage() {
         </header>
 
         {/* Dashboard Content */}
-        <div className="px-margin-desktop py-8 max-w-container-max mx-auto space-y-gutter">
+        <div className="px-4 md:px-margin-desktop py-8 max-w-container-max mx-auto space-y-gutter">
           {/* Page Title & CTA */}
           <div className="flex justify-between items-end">
             <div>

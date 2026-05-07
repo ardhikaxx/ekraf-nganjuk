@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import NewsSection from "@/components/NewsSection";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -19,23 +20,23 @@ export default function Home() {
         <div className="gradient-blob w-[600px] h-[600px] bottom-[20%] right-[-200px] bg-tertiary-container"></div>
 
         {/* Hero Section */}
-        <section className="px-margin-desktop max-w-container-max mx-auto py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/20">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-              <span className="font-label-caps text-label-caps text-secondary">The Future of Creativity</span>
+              <span className="font-label-caps text-label-caps text-secondary text-[10px] md:text-label-caps">The Future of Creativity</span>
             </div>
-            <h1 className="font-h1 text-h1 text-on-surface">
+            <h1 className="font-h1 text-[2.5rem] leading-tight md:text-h1 text-on-surface">
               Portal Ekonomi Kreatif Kabupaten Nganjuk
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
               Empowering local UMKM through digital transformation and strategic creative networks. We bridge tradition with innovation to build a sustainable creative ecosystem in the heart of East Java.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-secondary-container to-secondary rounded-full font-label-caps text-label-caps text-on-secondary-fixed shadow-[0_0_20px_rgba(38,65,145,0.4)] hover:scale-105 transition-all">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-secondary-container to-secondary rounded-full font-label-caps text-label-caps text-on-secondary-fixed shadow-[0_0_20px_rgba(38,65,145,0.4)] hover:scale-105 transition-all">
                 Explore Catalog
               </button>
-              <button className="px-8 py-4 border border-outline-variant bg-surface/40 backdrop-blur rounded-full font-label-caps text-label-caps text-on-surface hover:bg-surface-container transition-all">
+              <button className="w-full sm:w-auto px-8 py-4 border border-outline-variant bg-surface/40 backdrop-blur rounded-full font-label-caps text-label-caps text-on-surface hover:bg-surface-container transition-all">
                 Join Entrepreneur Hub
               </button>
             </div>
@@ -49,14 +50,14 @@ export default function Home() {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBKMayay69sUJRvEZvyiRDrZMCe8YucU6RcF3ItyAnD2mvjAZ0AXDgtwiC_KU-PFNHUPhNupP320_X2Eggc5r2KBd8LXtrcHm1ighcTSgykQYvwXWuayFVC33qzOF-PX9zpD1U6ipsIaEBJP1iDC2PZJWBtArb8b522sTa7Fwe76UdOOwOLN-RbOTT1O8Kcl0yhOiSSxbLrmY59pcKGgye4V51iH3WZ6Bit5ESKyn30x1hNZ11nlbz5p9lKHpzyg5APqIoKVVnu-iV"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl z-20 shadow-2xl">
+            <div className="absolute -bottom-4 md:-bottom-6 -right-4 md:-right-6 glass-card p-4 md:p-6 rounded-2xl z-20 shadow-2xl">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-tertiary-container flex items-center justify-center">
                   <span className="material-symbols-outlined text-tertiary">trending_up</span>
                 </div>
                 <div>
-                  <div className="font-h3 text-h3 text-on-surface">+120%</div>
-                  <div className="font-label-caps text-label-caps text-on-surface-variant">Growth Rate</div>
+                  <div className="font-h3 text-xl md:text-h3 text-on-surface">+120%</div>
+                  <div className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">Growth Rate</div>
                 </div>
               </div>
             </div>
@@ -64,8 +65,8 @@ export default function Home() {
         </section>
 
         {/* Statistics Section */}
-        <section className="px-margin-desktop max-w-container-max mx-auto py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-12 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-gutter">
             <div className="glass-card p-8 rounded-2xl text-center space-y-2 hover:scale-[1.02] transition-transform">
               <div className="font-h1 text-h1 text-primary">1,240+</div>
               <div className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
@@ -297,6 +298,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <NewsSection />
       </main>
 
       <Footer />

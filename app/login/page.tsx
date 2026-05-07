@@ -9,33 +9,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-background font-body-md text-on-surface overflow-x-hidden dark">
-      {/* TopNavBar */}
-      <nav className="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 shadow-md">
-        <div className="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
-          <div className="font-h3 text-h3 font-bold text-primary tracking-tight">Ekraf Nganjuk</div>
-          <div className="hidden md:flex gap-8">
-            <Link href="/" className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps">
-              Home
-            </Link>
-            <Link href="/catalog" className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps">
-              Catalog
-            </Link>
-            <Link href="/about" className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps">
-              About
-            </Link>
-            <Link href="#" className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-caps text-label-caps">
-              Gallery
-            </Link>
-          </div>
-          <Link href="/register" className="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20">
-            Register
-          </Link>
-        </div>
-      </nav>
-
-      <main className="min-h-screen flex flex-col md:flex-row pt-[72px]">
+      <main className="min-h-screen flex flex-col lg:flex-row">
         {/* Left Side: Narrative Illustration */}
-        <section className="relative w-full md:w-1/2 min-h-[409px] md:min-h-0 overflow-hidden flex items-center justify-center p-12">
+        <section className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-0 overflow-hidden flex items-center justify-center p-8 md:p-12">
+          {/* Back Button (Integrated) */}
+          <Link 
+            href="/" 
+            className="absolute top-8 left-8 z-50 flex items-center gap-2 px-4 py-2 bg-surface/20 backdrop-blur-md rounded-full border border-white/10 text-white hover:bg-surface/40 transition-all text-sm"
+          >
+            <span className="material-symbols-outlined text-[18px]">arrow_back</span>
+            <span className="font-label-caps text-label-caps">Beranda</span>
+          </Link>
+
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
@@ -47,14 +32,14 @@ export default function LoginPage() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 max-w-lg">
-            <span className="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-4 block">
+          <div className="relative z-10 max-w-lg text-center lg:text-left">
+            <span className="font-label-caps text-[10px] md:text-label-caps text-primary tracking-[0.2em] mb-4 block">
               PORTAL EKONOMI KREATIF
             </span>
-            <h1 className="font-h1 text-h1 text-on-surface mb-6">
+            <h1 className="font-h1 text-[2rem] md:text-h1 text-on-surface mb-6 leading-tight">
               Pioneering the Creative Era in Nganjuk.
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="font-body-lg text-body-md md:text-body-lg text-on-surface-variant leading-relaxed">
               Access the central hub for local entrepreneurs and administrative brilliance.
               Together, we build a smarter, more vibrant creative ecosystem.
             </p>
@@ -62,18 +47,18 @@ export default function LoginPage() {
         </section>
 
         {/* Right Side: Login Form */}
-        <section className="w-full md:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface-container-lowest">
+        <section className="w-full lg:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface-container-lowest">
           <div className="w-full max-w-md">
-            <div className="glass-card p-10 rounded-xl shadow-xl border border-outline-variant/10">
-              <div className="mb-10">
-                <h2 className="font-h2 text-h2 text-on-surface mb-2">Welcome Back</h2>
+            <div className="glass-card p-6 md:p-10 rounded-xl shadow-xl border border-outline-variant/10">
+              <div className="mb-8 md:mb-10 text-center lg:text-left">
+                <h2 className="font-h2 text-2xl md:text-h2 text-on-surface mb-2">Welcome Back</h2>
                 <p className="font-body-md text-on-surface-variant">
                   Please enter your credentials to continue.
                 </p>
               </div>
 
               {/* Role Selector */}
-              <div className="flex gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <button
                   className={`flex-1 py-3 px-4 rounded-lg border flex items-center justify-center gap-2 hover:translate-x-1 transition-transform duration-300 ${
                     role === "entrepreneur"
@@ -82,10 +67,10 @@ export default function LoginPage() {
                   }`}
                   onClick={() => setRole("entrepreneur")}
                 >
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>
                     group
                   </span>
-                  <span className="font-label-caps text-label-caps">Entrepreneur</span>
+                  <span className="font-label-caps text-[10px] md:text-label-caps">Entrepreneur</span>
                 </button>
                 <button
                   className={`flex-1 py-3 px-4 rounded-lg border flex items-center justify-center gap-2 hover:translate-x-1 transition-transform duration-300 ${
@@ -95,8 +80,8 @@ export default function LoginPage() {
                   }`}
                   onClick={() => setRole("admin")}
                 >
-                  <span className="material-symbols-outlined">admin_panel_settings</span>
-                  <span className="font-label-caps text-label-caps">Admin</span>
+                  <span className="material-symbols-outlined text-sm">admin_panel_settings</span>
+                  <span className="font-label-caps text-[10px] md:text-label-caps">Admin</span>
                 </button>
               </div>
 

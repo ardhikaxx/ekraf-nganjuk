@@ -33,21 +33,21 @@ export default function AboutPage() {
         <div className="gradient-blob w-[600px] h-[600px] top-1/2 -right-48 opacity-40 bg-secondary/20"></div>
 
         {/* Hero Section */}
-        <section className="max-w-container-max mx-auto px-margin-desktop pt-8 pb-20 flex flex-col md:flex-row items-center gap-16">
-          <div className="flex-1 space-y-6">
-            <span className="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8 pb-12 md:pb-20 flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex-1 space-y-6 text-center lg:text-left">
+            <span className="font-label-caps text-[10px] md:text-label-caps text-primary tracking-[0.2em] uppercase">
               Pusat Kreativitas Daerah
             </span>
-            <h1 className="font-h1 text-h1">
+            <h1 className="font-h1 text-[2.5rem] md:text-h1 leading-tight">
               Membangun Masa Depan{" "}
               <span className="gradient-text">Ekonomi Kreatif</span> di Nganjuk.
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
               Portal Ekonomi Kreatif Nganjuk (Ekraf Nganjuk) adalah inisiatif strategis untuk
               memetakan, memberdayakan, dan mempromosikan seluruh potensi industri kreatif di
               Kabupaten Nganjuk menuju era digitalisasi global.
             </p>
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
               <button className="px-8 py-4 bg-primary text-primary-container rounded-full font-h3 text-body-md font-bold hover:shadow-[0_0_20px_rgba(185,199,228,0.4)] transition-all">
                 Pelajari Lebih Lanjut
               </button>
@@ -57,7 +57,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="flex-1 relative">
+          <div className="flex-1 relative w-full">
             <div className="glass-card glass-stroke rounded-3xl overflow-hidden aspect-video relative z-10">
               <img
                 alt="Collaboration in Nganjuk"
@@ -65,14 +65,14 @@ export default function AboutPage() {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTw88q5derlJMMRNzE4Bw3cddZQo3kNy_uZwVc-96gufE1yRLFhhbwVYRjqOqVJPYjMtPeRuGHfzmbY1BE1JBWskFseJr6_mi24msyZTmlHXkvNBRmdp5oTG1CXxTN3V9p0_HLnsX--fjpg4WDPp-UILBR5_tmxstUq2tbN6dTV0pdUHQCHmCKScjR95pduO5HZYy00bloE4cnwOHdkEXiJNdUj-lPszWDGR84-g9e1PZ5p2JpAM7fS535yiPZTBz2OMrA-m0qg4BV"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl z-20 border border-outline-variant/30">
+            <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 glass-card p-4 md:p-6 rounded-2xl z-20 border border-outline-variant/30">
               <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-primary text-4xl" data-icon="rocket_launch">
+                <span className="material-symbols-outlined text-primary text-3xl md:text-4xl" data-icon="rocket_launch">
                   rocket_launch
                 </span>
                 <div>
-                  <div className="font-h3 text-h3">17+</div>
-                  <div className="font-label-caps text-label-caps text-on-surface-variant">Sektor Kreatif</div>
+                  <div className="font-h3 text-xl md:text-h3">17+</div>
+                  <div className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">Sektor Kreatif</div>
                 </div>
               </div>
             </div>
@@ -80,17 +80,17 @@ export default function AboutPage() {
         </section>
 
         {/* Vision & Mission (Bento Grid) */}
-        <section className="max-w-container-max mx-auto px-margin-desktop py-24">
-          <div className="text-center mb-16">
+        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="font-h2 text-h2 mb-4">Visi & Misi Kami</h2>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
               Landasan kami dalam mendorong pertumbuhan ekonomi berbasis kreativitas dan kearifan lokal.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <div className="md:col-span-2 glass-card glass-stroke p-12 rounded-[2rem] flex flex-col justify-between group hover:scale-[1.02] transition-all duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter">
+            <div className="md:col-span-2 glass-card glass-stroke p-8 md:p-12 rounded-[2rem] flex flex-col justify-between group hover:scale-[1.02] transition-all duration-500">
               <div>
-                <span className="material-symbols-outlined text-primary text-5xl mb-8" data-icon="visibility">
+                <span className="material-symbols-outlined text-primary text-4xl md:text-5xl mb-6 md:mb-8" data-icon="visibility">
                   visibility
                 </span>
                 <h3 className="font-h2 text-h2 mb-4">Visi Utama</h3>
