@@ -79,7 +79,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/register"
-              className="bg-gradient-to-r from-primary to-secondary text-primary-container px-7 py-2.5 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
+              className="hidden lg:flex bg-gradient-to-r from-primary to-secondary text-primary-container px-7 py-2.5 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
             >
               Join Hub
             </Link>
@@ -105,7 +105,7 @@ export default function Navbar() {
             : "opacity-0 -translate-y-4 invisible"
           }`}
       >
-        <div className="glass-card rounded-3xl p-6 shadow-2xl border border-primary/20 overflow-hidden relative">
+        <div className="bg-surface/80 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-primary/20 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full"></div>
           <div className="flex flex-col gap-2 relative z-10">
             {navLinks.map((link) => {
