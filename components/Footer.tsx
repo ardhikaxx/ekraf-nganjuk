@@ -3,105 +3,76 @@
 import Link from "next/link";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-surface-container-lowest border-t border-outline-variant/30 py-20 mt-auto">
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-12 text-left">
-        <div className="md:col-span-1 space-y-6 text-left">
-          <Link href="/">
+    <footer className="bg-gray-950 border-t border-gray-800 py-16 mt-auto text-gray-300">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="space-y-6">
+          <Link href="/" className="inline-block">
             <img 
               src="/assets/logo-ekraf.png" 
               alt="Ekraf Nganjuk Logo" 
-              className="h-16 w-auto object-contain hover:opacity-80 transition-opacity"
+              className="h-14 w-auto"
             />
           </Link>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-sm">
-            Inisiatif digital untuk mengakselerasi pertumbuhan ekonomi kreatif di Kabupaten Nganjuk
-            melalui teknologi, kolaborasi, dan pemberdayaan talenta lokal.
+          <p className="text-gray-400 text-sm leading-relaxed">
+            Inisiatif digital untuk mengakselerasi pertumbuhan ekonomi kreatif di Kabupaten Nganjuk melalui teknologi dan kolaborasi.
           </p>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Navigasi</h4>
+          <ul className="space-y-3">
+            {[
+              { label: "Home", href: "/" },
+              { label: "Katalog Produk", href: "/catalog" },
+              { label: "Tentang Kami", href: "/about" },
+              { label: "Pendaftaran", href: "/register" },
+            ].map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Kontak Kami</h4>
+          <ul className="space-y-3 text-sm text-gray-400">
+            <li>Jl. Basuki Rahmad No. 1</li>
+            <li>Nganjuk, Jawa Timur</li>
+            <li className="mt-2 font-medium text-white">info@ekrafnganjuk.id</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Ikuti Kami</h4>
           <div className="flex gap-4">
-            <Link
-              href="#"
-              className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-primary-container transition-colors"
-            >
-              <span className="material-symbols-outlined text-xl">share</span>
-            </Link>
-            <Link
-              href="#"
-              className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-primary-container transition-colors"
-            >
-              <span className="material-symbols-outlined text-xl">language</span>
-            </Link>
+            {['Instagram', 'Twitter', 'Facebook'].map((social) => (
+              <a
+                key={social}
+                href="#"
+                className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all"
+                aria-label={social}
+              >
+                {social[0]}
+              </a>
+            ))}
           </div>
-        </div>
-
-        <div className="text-left">
-          <h4 className="font-label-caps text-label-caps text-primary mb-6">Navigasi</h4>
-          <ul className="space-y-4">
-            <li>
-              <Link href="/" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/catalog" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Katalog Produk
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Tentang Kami
-              </Link>
-            </li>
-            <li>
-              <Link href="/register" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Pendaftaran
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="text-left">
-          <h4 className="font-label-caps text-label-caps text-primary mb-6">Kontak Kami</h4>
-          <ul className="space-y-4">
-            <li className="font-body-md text-body-md text-on-surface-variant">
-              Jl. Basuki Rahmad No. 1,<br />
-              Nganjuk, Jawa Timur
-            </li>
-            <li className="font-body-md text-body-md text-on-surface-variant">
-              Email: info@ekrafnganjuk.id
-            </li>
-            <li className="font-body-md text-body-md text-on-surface-variant">
-              Telp: (0358) 321xxx
-            </li>
-          </ul>
-        </div>
-
-        <div className="text-left">
-          <h4 className="font-label-caps text-label-caps text-primary mb-6">Legal</h4>
-          <ul className="space-y-4">
-            <li>
-              <Link href="#" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Terms of Service
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors">
-                Contact Support
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
 
-      <div className="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-outline-variant/10 text-center">
-        <p className="font-label-caps text-label-caps text-on-surface-variant">
-          &copy; 2024 Pemerintah Kabupaten Nganjuk. All Rights Reserved.
+      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-xs text-gray-500">
+          &copy; {currentYear} Pemerintah Kabupaten Nganjuk. All Rights Reserved.
         </p>
+        <div className="flex gap-6">
+          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Privacy Policy</Link>
+          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Terms of Service</Link>
+        </div>
       </div>
     </footer>
   );
