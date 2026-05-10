@@ -105,6 +105,25 @@
   --color-on-background: #e4e2e4;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131315;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #343536;
+  border-radius: 5px;
+  border: 2px solid #131315;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #44474d;
+}
+
 /* Base styles */
 body {
   font-family: 'Inter', sans-serif;

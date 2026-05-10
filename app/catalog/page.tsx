@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -79,131 +80,133 @@ export default function CatalogPage() {
       <Navbar />
 
       <main className="pt-32 pb-24">
-        {/* Hero Section with Search */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 md:mb-20 relative">
-          <div className="absolute inset-0 hero-glow -z-10"></div>
-          <div className="max-w-3xl">
-            <h1 className="font-h1 text-[2.5rem] md:text-h1 text-primary-fixed mb-6 leading-tight">
-              Katalog Sektor Ekonomi Kreatif
-            </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mb-10">
-              Jelajahi ekosistem kreatif Nganjuk melalui 17 subsektor unggulan. Temukan inovasi, karya
-              seni, dan peluang kolaborasi bersama para pelaku industri lokal.
-            </p>
-            <div className="relative group">
-              <div className="absolute inset-y-0 left-4 md:left-6 flex items-center pointer-events-none">
-                <span className="material-symbols-outlined text-primary text-xl md:text-2xl">search</span>
-              </div>
-              <input
-                className="w-full bg-surface-container-high border-outline-variant/30 border text-on-surface rounded-full py-4 md:py-5 pl-10 md:pl-12 pr-6 md:pr-8 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-on-surface-variant/50 backdrop-blur-md text-sm md:text-base"
-                placeholder={placeholder}
-                type="text"
-              />
-              <div className="absolute right-2 inset-y-2">
-                <button className="h-full px-6 md:px-8 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity">
-                  Cari
-                </button>
+        <PageTransition>
+          {/* Hero Section with Search */}
+          <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12 md:mb-20 relative">
+            <div className="absolute inset-0 hero-glow -z-10"></div>
+            <div className="max-w-3xl">
+              <h1 className="font-h1 text-[2.5rem] md:text-h1 text-primary-fixed mb-6 leading-tight">
+                Katalog Sektor Ekonomi Kreatif
+              </h1>
+              <p className="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                Jelajahi ekosistem kreatif Nganjuk melalui 17 subsektor unggulan. Temukan inovasi, karya
+                seni, dan peluang kolaborasi bersama para pelaku industri lokal.
+              </p>
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-4 md:left-6 flex items-center pointer-events-none">
+                  <span className="material-symbols-outlined text-primary text-xl md:text-2xl">search</span>
+                </div>
+                <input
+                  className="w-full bg-surface-container-high border-outline-variant/30 border text-on-surface rounded-full py-4 md:py-5 pl-10 md:pl-12 pr-6 md:pr-8 focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none placeholder:text-on-surface-variant/50 backdrop-blur-md text-sm md:text-base"
+                  placeholder={placeholder}
+                  type="text"
+                />
+                <div className="absolute right-2 inset-y-2">
+                  <button className="h-full px-6 md:px-8 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity">
+                    Cari
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Categories Grid */}
-        <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 md:mb-24">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
-            <div>
-              <span className="text-tertiary font-label-caps text-[10px] md:text-label-caps uppercase tracking-widest mb-2 block">
-                Kategori Unggulan
-              </span>
-              <h2 className="font-h2 text-[2rem] md:text-h2 text-on-surface">Subsektor Kreatif</h2>
+          {/* Categories Grid */}
+          <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 md:mb-24">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-12">
+              <div>
+                <span className="text-tertiary font-label-caps text-[10px] md:text-label-caps uppercase tracking-widest mb-2 block">
+                  Kategori Unggulan
+                </span>
+                <h2 className="font-h2 text-[2rem] md:text-h2 text-on-surface">Subsektor Kreatif</h2>
+              </div>
+              <div className="text-on-surface-variant font-body-md text-sm md:text-base">17 Sektor Tersedia</div>
             </div>
-            <div className="text-on-surface-variant font-body-md text-sm md:text-base">17 Sektor Tersedia</div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {sectors.map((sector) => (
-              <div
-                key={sector.name}
-                className={`glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300`}
-              >
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+              {sectors.map((sector) => (
                 <div
-                  className={`w-12 h-12 md:w-16 md:h-16 bg-${sector.color}-container rounded-2xl flex items-center justify-center mb-4 md:mb-6`}
+                  key={sector.name}
+                  className={`glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300`}
                 >
-                  <span className={`material-symbols-outlined text-${sector.color} text-2xl md:text-4xl`}>
-                    {sector.icon}
-                  </span>
+                  <div
+                    className={`w-12 h-12 md:w-16 md:h-16 bg-${sector.color}-container rounded-2xl flex items-center justify-center mb-4 md:mb-6`}
+                  >
+                    <span className={`material-symbols-outlined text-${sector.color} text-2xl md:text-4xl`}>
+                      {sector.icon}
+                    </span>
+                  </div>
+                  <h3 className={`font-h3 text-lg md:text-h3 text-${sector.color} mb-2`}>{sector.name}</h3>
+                  <p className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
+                    {sector.count} Pelaku
+                  </p>
                 </div>
-                <h3 className={`font-h3 text-lg md:text-h3 text-${sector.color} mb-2`}>{sector.name}</h3>
-                <p className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
-                  {sector.count} Pelaku
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        {/* Featured Entrepreneurs Section */}
-        <section className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="font-h2 text-h2 text-on-surface">Pelaku Kreatif Unggulan</h2>
-            <button className="text-primary hover:text-primary-fixed transition-colors flex items-center gap-2 group">
-              Lihat Semua Pelaku{" "}
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            {entrepreneurs.map((item) => (
-              <div key={item.name} className="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
-                <div className="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
-                  <img
-                    className="w-full h-full object-cover"
-                    alt={item.name}
-                    src={item.img}
-                  />
-                </div>
-                <div className="p-8 flex flex-col justify-between">
-                  <div>
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className={`font-h3 text-h3 text-${item.color}`}>{item.name}</h3>
-                      <span
-                        className={`bg-${item.color}/10 text-${item.color} px-3 py-1 rounded-full text-[10px] font-bold uppercase`}
-                      >
-                        {item.category}
-                      </span>
-                    </div>
-                    <p className="text-on-surface-variant font-label-caps text-label-caps mb-4">
-                      Pemilik: {item.owner}
-                    </p>
-                    <p className="text-on-surface-variant font-body-md line-clamp-2 mb-6">
-                      {item.description || `Spesialis ${item.category.toLowerCase()} dengan sentuhan lokal Nganjuk.`}
-                    </p>
+          {/* Featured Entrepreneurs Section */}
+          <section className="max-w-container-max mx-auto px-margin-desktop">
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="font-h2 text-h2 text-on-surface">Pelaku Kreatif Unggulan</h2>
+              <button className="text-primary hover:text-primary-fixed transition-colors flex items-center gap-2 group">
+                Lihat Semua Pelaku{" "}
+                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+              {entrepreneurs.map((item) => (
+                <div key={item.name} className="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
+                  <div className="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover"
+                      alt={item.name}
+                      src={item.img}
+                    />
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-on-surface-variant">
-                      <span className="material-symbols-outlined text-sm">location_on</span>
-                      <span className="text-xs">{item.location}</span>
+                  <div className="p-8 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className={`font-h3 text-h3 text-${item.color}`}>{item.name}</h3>
+                        <span
+                          className={`bg-${item.color}/10 text-${item.color} px-3 py-1 rounded-full text-[10px] font-bold uppercase`}
+                        >
+                          {item.category}
+                        </span>
+                      </div>
+                      <p className="text-on-surface-variant font-label-caps text-label-caps mb-4">
+                        Pemilik: {item.owner}
+                      </p>
+                      <p className="text-on-surface-variant font-body-md line-clamp-2 mb-6">
+                        {item.description || `Spesialis ${item.category.toLowerCase()} dengan sentuhan lokal Nganjuk.`}
+                      </p>
                     </div>
-                    <div className="flex gap-4">
-                      <a
-                        href="#"
-                        className="text-on-surface-variant hover:text-primary transition-colors"
-                      >
-                        <span className="material-symbols-outlined">public</span>
-                      </a>
-                      <a
-                        href="#"
-                        className="text-on-surface-variant hover:text-primary transition-colors"
-                      >
-                        <span className="material-symbols-outlined">mail</span>
-                      </a>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-on-surface-variant">
+                        <span className="material-symbols-outlined text-sm">location_on</span>
+                        <span className="text-xs">{item.location}</span>
+                      </div>
+                      <div className="flex gap-4">
+                        <a
+                          href="#"
+                          className="text-on-surface-variant hover:text-primary transition-colors"
+                        >
+                          <span className="material-symbols-outlined">public</span>
+                        </a>
+                        <a
+                          href="#"
+                          className="text-on-surface-variant hover:text-primary transition-colors"
+                        >
+                          <span className="material-symbols-outlined">mail</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </PageTransition>
       </main>
 
       <Footer />

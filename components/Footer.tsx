@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +12,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="space-y-6">
           <Link href="/" className="inline-block">
-            <img 
-              src="/assets/logo-ekraf.png" 
-              alt="Ekraf Nganjuk Logo" 
-              className="h-14 w-auto"
+            <Image
+              src="/assets/logo-ekraf.png"
+              alt="Ekraf Nganjuk Logo"
+              width={200}
+              height={56}
+              className="h-14 w-auto object-contain"
             />
           </Link>
           <p className="text-gray-400 text-sm leading-relaxed">
@@ -51,16 +55,15 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Ikuti Kami</h4>
           <div className="flex gap-4">
-            {['Instagram', 'Twitter', 'Facebook'].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all"
-                aria-label={social}
-              >
-                {social[0]}
-              </a>
-            ))}
+            <a href="#" className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all" aria-label="Instagram">
+              <FaInstagram size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all" aria-label="Twitter">
+              <FaTwitter size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-lg bg-gray-900 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all" aria-label="Facebook">
+              <FaFacebook size={20} />
+            </a>
           </div>
         </div>
       </div>
