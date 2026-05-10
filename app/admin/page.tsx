@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -64,17 +63,12 @@ export default function AdminDashboardPage() {
   return (
     <div className="min-h-screen bg-background text-on-surface font-body-md dark">
       {/* SideNavBar */}
-      <aside className={`h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 shadow-xl flex flex-col p-4 gap-2 z-50 transition-transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
-        <div className="mb-8 px-4 flex justify-between items-center">
-          <div>
-            <h3 className="font-h3 text-h3 text-tertiary-fixed-dim font-bold tracking-tight">
-              Admin Panel
-            </h3>
-            <p className="font-label-caps text-label-caps text-on-surface-variant opacity-60">
-              Creative Hub
-            </p>
+      <aside className={`h-screen w-72 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant/10 shadow-2xl flex flex-col p-6 z-50 transition-transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
+        <div className="mb-0 flex items-center justify-center relative px-2">
+          <div className="w-full max-w-[200px] h-28 relative flex items-center justify-center p-1">
+             <Image src="/assets/logo-ekraf.png" alt="Logo" width={200} height={112} className="object-contain w-full h-full" />
           </div>
-          <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden text-on-surface-variant">
+          <button onClick={() => setIsSidebarOpen(false)} className="lg:hidden absolute right-0 text-on-surface-variant">
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>
@@ -83,54 +77,44 @@ export default function AdminDashboardPage() {
           {/* Active Tab: Dashboard */}
           <Link
             href="#"
-            className="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 p-3 transition-transform duration-300"
+            className="bg-primary/10 text-primary rounded-xl flex items-center gap-4 p-4 font-bold transition-all duration-300"
           >
-            <span className="material-symbols-outlined" data-icon="dashboard">
-              dashboard
-            </span>
-            <span className="font-label-caps text-label-caps">Dashboard</span>
+            <span className="material-symbols-outlined">dashboard</span>
+            <span className="text-sm">Dashboard</span>
           </Link>
 
           <Link
             href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-4 p-4 transition-all duration-300"
           >
-            <span className="material-symbols-outlined" data-icon="monitoring">
-              monitoring
-            </span>
-            <span className="font-label-caps text-label-caps">Analytics</span>
+            <span className="material-symbols-outlined">monitoring</span>
+            <span className="text-sm">Analytics</span>
           </Link>
 
           <Link
             href="/catalog"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-4 p-4 transition-all duration-300"
           >
-            <span className="material-symbols-outlined" data-icon="category">
-              category
-            </span>
-            <span className="font-label-caps text-label-caps">Sectors</span>
+            <span className="material-symbols-outlined">category</span>
+            <span className="text-sm">Sektor</span>
           </Link>
 
           <Link
             href="#"
-            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-3 p-3 transition-transform duration-300 hover:translate-x-1"
+            className="text-on-surface-variant hover:bg-surface-container-highest rounded-xl flex items-center gap-4 p-4 transition-all duration-300"
           >
-            <span className="material-symbols-outlined" data-icon="group">
-              group
-            </span>
-            <span className="font-label-caps text-label-caps">Entrepreneurs</span>
+            <span className="material-symbols-outlined">group</span>
+            <span className="text-sm">Pelaku Ekraf</span>
           </Link>
         </nav>
 
-        <div className="mt-auto flex flex-col gap-2 pt-4 border-t border-outline-variant/10">
+        <div className="mt-auto pt-6 border-t border-outline-variant/10">
           <Link
             href="#"
-            className="text-error hover:bg-error-container/20 rounded-xl flex items-center gap-3 p-3 transition-transform duration-300"
+            className="text-error hover:bg-error-container/20 rounded-xl flex items-center gap-4 p-4 transition-all duration-300"
           >
-            <span className="material-symbols-outlined" data-icon="logout">
-              logout
-            </span>
-            <span className="font-label-caps text-label-caps">Logout</span>
+            <span className="material-symbols-outlined">logout</span>
+            <span className="text-sm font-bold">Logout</span>
           </Link>
         </div>
       </aside>
@@ -138,35 +122,43 @@ export default function AdminDashboardPage() {
       {/* Main Content Area */}
       <main className="lg:ml-64 min-h-screen">
         {/* Top Header */}
-        <header className="sticky top-0 z-40 bg-surface/60 backdrop-blur-lg border-b border-outline-variant/20 px-4 md:px-margin-desktop py-4 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden p-2 text-on-surface-variant">
+        <header className="sticky top-0 z-40 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.2)] px-4 md:px-6 py-3 flex justify-between items-center gap-6">
+          <div className="flex items-center gap-4 flex-1">
+            <button onClick={() => setIsSidebarOpen(true)} className="lg:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-xl transition-all">
               <span className="material-symbols-outlined">menu</span>
             </button>
-            <div className="relative w-full max-w-xs md:max-w-md">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm md:text-base">
+            <div className="relative w-full max-w-sm ml-6 md:ml-8">
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-lg">
                 search
               </span>
               <input
-                className="w-full bg-surface-container-high border-none rounded-full pl-10 pr-4 py-2 text-sm md:text-body-md focus:ring-2 focus:ring-primary transition-all"
-                placeholder="Search..."
+                className="w-full bg-surface-container/50 border border-outline-variant/10 rounded-full py-2.5 pl-10 pr-4 text-sm focus:bg-surface-container focus:ring-2 focus:ring-primary/30 transition-all outline-none"
+                placeholder="Cari data..."
                 type="text"
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-4 md:gap-6">
-            <div className="flex items-center gap-3 pl-4 border-l border-outline-variant/20">
-              <div className="text-right hidden sm:block">
-                <p className="font-label-caps text-label-caps text-on-surface">Admin Utama</p>
+          <div className="flex items-center gap-2 md:gap-4">
+            <button className="relative p-2.5 text-on-surface-variant hover:text-primary hover:bg-surface-container rounded-xl transition-all">
+              <span className="material-symbols-outlined">notifications</span>
+              <span className="absolute top-2 right-2 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-background"></span>
+            </button>
+            
+            <div className="flex items-center gap-3 pl-2 md:pl-4 border-l border-outline-variant/10">
+              <div className="text-right hidden md:block">
+                <p className="text-xs font-bold text-on-surface">Admin Utama</p>
+                <p className="text-[10px] text-primary uppercase font-semibold tracking-wider">Administrator</p>
               </div>
-              <Image
-                alt="Admin Profile"
-                className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-primary/20"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbe_-CVnnEsWyzjds9BFyUeB_T9A_VLZr1H2tEM3dVFsJwC99qRGBTPU5MW7VDpRJH_nNDs_-6JXHzPIlLW88EzLzIi9xbNnzOwCaW6zXIIdjWLl-qh7jNAeGJTy7X3F8AHaNfdUJHAo0DFTkEKyY0y6lmo1G8DT1wdXx6yHuPhd6DYfDSyA9CWNu9E_quSYAPgPTM_NueUtO9xdFypx6dlotROxWLr7EHn5BM7zcpy5sGHulib3KQPSCM2AUJfhz7pXL1Ky_DY-S"
-                width={40}
-                height={40}
-              />
+              <button className="w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden border-2 border-primary/20 hover:border-primary transition-all shrink-0">
+                <Image
+                  alt="Admin Profile"
+                  width={40}
+                  height={40}
+                  className="object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbe_-CVnnEsWyzjds9BFyUeB_T9A_VLZr1H2tEM3dVFsJwC99qRGBTPU5MW7VDpRJH_nNDs_-6JXHzPIlLW88EzLzIi9xbNnzOwCaW6zXIIdjWLl-qh7jNAeGJTy7X3F8AHaNfdUJHAo0DFTkEKyY0y6lmo1G8DT1wdXx6yHuPhd6DYfDSyA9CWNu9E_quSYAPgPTM_NueUtO9xdFypx6dlotROxWLr7EHn5BM7zcpy5sGHulib3KQPSCM2AUJfhz7pXL1Ky_DY-S"
+                />
+              </button>
             </div>
           </div>
         </header>
@@ -174,14 +166,14 @@ export default function AdminDashboardPage() {
         {/* Dashboard Content */}
         <div className="px-4 md:px-margin-desktop py-8 max-w-container-max mx-auto space-y-gutter">
           {/* Page Title & CTA */}
-          <div className="flex justify-between items-end">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
               <h1 className="font-h2 text-h2 text-on-surface">Dashboard Overview</h1>
               <p className="text-on-surface-variant mt-1">
                 Pantau performa ekonomi kreatif Nganjuk secara real-time.
               </p>
             </div>
-            <button className="bg-gradient-to-r from-primary to-tertiary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+            <button className="bg-gradient-to-r from-primary to-tertiary text-on-primary px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-transform w-full md:w-auto justify-center">
               <span className="material-symbols-outlined" data-icon="add">
                 add
               </span>
@@ -473,8 +465,6 @@ export default function AdminDashboardPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
