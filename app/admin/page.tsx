@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AdminDashboardPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -159,10 +160,12 @@ export default function AdminDashboardPage() {
               <div className="text-right hidden sm:block">
                 <p className="font-label-caps text-label-caps text-on-surface">Admin Utama</p>
               </div>
-              <img
+              <Image
                 alt="Admin Profile"
                 className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border-2 border-primary/20"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKbe_-CVnnEsWyzjds9BFyUeB_T9A_VLZr1H2tEM3dVFsJwC99qRGBTPU5MW7VDpRJH_nNDs_-6JXHzPIlLW88EzLzIi9xbNnzOwCaW6zXIIdjWLl-qh7jNAeGJTy7X3F8AHaNfdUJHAo0DFTkEKyY0y6lmo1G8DT1wdXx6yHuPhd6DYfDSyA9CWNu9E_quSYAPgPTM_NueUtO9xdFypx6dlotROxWLr7EHn5BM7zcpy5sGHulib3KQPSCM2AUJfhz7pXL1Ky_DY-S"
+                width={40}
+                height={40}
               />
             </div>
           </div>

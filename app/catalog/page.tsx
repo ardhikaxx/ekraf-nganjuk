@@ -126,23 +126,22 @@ export default function CatalogPage() {
               {sectors.map((sector) => (
                 <div
                   key={sector.name}
-                  className={`glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300`}
+                  className="glass-card p-6 md:p-8 rounded-xl flex flex-col items-center text-center hover:scale-105 transition-all duration-300"
                 >
                   <div
-                    className={`w-12 h-12 md:w-16 md:h-16 bg-${sector.color}-container rounded-2xl flex items-center justify-center mb-4 md:mb-6`}
+                    className="w-12 h-12 md:w-16 md:h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-4 md:mb-6"
                   >
-                    <span className={`material-symbols-outlined text-${sector.color} text-2xl md:text-4xl`}>
+                    <span className="material-symbols-outlined text-primary text-2xl md:text-4xl">
                       {sector.icon}
                     </span>
                   </div>
-                  <h3 className={`font-h3 text-lg md:text-h3 text-${sector.color} mb-2`}>{sector.name}</h3>
+                  <h3 className="font-h3 text-lg md:text-h3 text-primary mb-2">{sector.name}</h3>
                   <p className="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
                     {sector.count} Pelaku
                   </p>
                 </div>
               ))}
-            </div>
-          </section>
+            </div>          </section>
 
           {/* Featured Entrepreneurs Section */}
           <section className="max-w-container-max mx-auto px-margin-desktop">

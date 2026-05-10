@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -23,14 +24,15 @@ export default function LoginPage() {
 
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <img
+            <Image
               className="w-full h-full object-cover"
               alt="Creative Hub"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_pVXFicaoRg4WkYwHU7L-VzlflmfvUl-6R4bVdTQ3a695x6Iy_yjmchAZ2oeVzMaLL-1C2-_1-iI1P46zK0kzzbR8b6P9hzNcrEMT5men9kyCI-g4W-cky-Kd0NL9Hc6ZCIvtLcAcLLdLS8a6zcJZ8Tb1Uzi_uJrV9cqKvZ8ui3-PKxFxCPyjcb9PrMrL9Oymnld66ypOOrI-lxMHiQjIYLa8578elYAtRL8ef62tQJQ_KlC4KHK-vKGSqvms-9aKuq9kV99opmg8"
+              width={800}
+              height={600}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-container/90 via-primary-container/60 to-transparent"></div>
           </div>
-
           {/* Content */}
           <div className="relative z-10 max-w-lg text-center lg:text-left">
             <span className="font-label-caps text-[10px] md:text-label-caps text-primary tracking-[0.2em] mb-4 block">

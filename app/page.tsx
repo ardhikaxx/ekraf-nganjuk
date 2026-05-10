@@ -91,7 +91,7 @@ export default function Home() {
 
           {/* Featured Sectors */}
           <section className="px-margin-desktop max-w-container-max mx-auto py-24">
-            <div className="flex justify-between items-end mb-12">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
               <div className="space-y-2">
                 <h2 className="font-h2 text-h2 text-on-surface">Sektor Kreatif</h2>
                 <p className="font-body-md text-on-surface-variant">
@@ -105,7 +105,7 @@ export default function Home() {
                 </span>
               </a>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
                 { icon: "restaurant", name: "Kuliner", color: "secondary" },
                 { icon: "styler", name: "Fashion", color: "tertiary" },
