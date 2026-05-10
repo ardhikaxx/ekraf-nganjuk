@@ -29,7 +29,7 @@ export default function Footer() {
           <h4 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Navigasi</h4>
           <ul className="space-y-3">
             {[
-              { label: "Home", href: "/" },
+              { label: "Beranda", href: "/" },
               { label: "Katalog Produk", href: "/catalog" },
               { label: "Tentang Kami", href: "/about" },
               { label: "Pendaftaran", href: "/register" },
@@ -70,11 +70,11 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-xs text-gray-500">
-          &copy; {currentYear} Pemerintah Kabupaten Nganjuk. All Rights Reserved.
+          &copy; {currentYear} Pemerintah Kabupaten Nganjuk. Hak Cipta Dilindungi.
         </p>
         <div className="flex gap-6">
-          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Privacy Policy</Link>
-          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Terms of Service</Link>
+          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Kebijakan Privasi</Link>
+          <Link href="#" className="text-xs text-gray-500 hover:text-gray-300">Ketentuan Layanan</Link>
         </div>
       </div>
     </footer>

@@ -19,10 +19,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Catalog", href: "/catalog" },
-    { name: "About", href: "/about" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Beranda", href: "/" },
+    { name: "Katalog", href: "/catalog" },
+    { name: "Tentang", href: "/about" },
+    { name: "Galeri", href: "/gallery" },
   ];
 
   return (
@@ -75,13 +75,13 @@ export default function Navbar() {
               className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all duration-300"
             >
               <span className="material-symbols-outlined text-[20px]">login</span>
-              Login
+              Masuk
             </Link>
             <Link
               href="/register"
               className="hidden lg:flex bg-gradient-to-r from-primary to-secondary text-primary-container px-7 py-2.5 rounded-full font-label-caps text-label-caps font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20"
             >
-              Join Hub
+              Daftar Hub
             </Link>
             
             {/* Mobile Menu Toggle */}
@@ -133,14 +133,14 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2 p-4 rounded-2xl bg-surface-container text-on-surface-variant font-label-caps text-label-caps"
               >
                 <span className="material-symbols-outlined text-[18px]">login</span>
-                Login
+                Masuk
               </Link>
               <Link
                 href="/register"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 p-4 rounded-2xl bg-primary text-primary-container font-label-caps text-label-caps font-bold"
               >
-                Join Now
+                Daftar Sekarang
               </Link>
             </div>
           </div>

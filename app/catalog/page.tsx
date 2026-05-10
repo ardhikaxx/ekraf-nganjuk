@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/PageTransition";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -158,10 +159,12 @@ export default function CatalogPage() {
               {entrepreneurs.map((item) => (
                 <div key={item.name} className="glass-card overflow-hidden rounded-2xl flex flex-col sm:flex-row">
                   <div className="w-full sm:w-48 h-48 sm:h-auto shrink-0 relative overflow-hidden">
-                    <img
+                    <Image
                       className="w-full h-full object-cover"
                       alt={item.name}
                       src={item.img}
+                      width={192}
+                      height={192}
                     />
                   </div>
                   <div className="p-8 flex flex-col justify-between">
@@ -169,7 +172,7 @@ export default function CatalogPage() {
                       <div className="flex justify-between items-start mb-2">
                         <h3 className={`font-h3 text-h3 text-${item.color}`}>{item.name}</h3>
                         <span
-                          className={`bg-${item.color}/10 text-${item.color} px-3 py-1 rounded-full text-[10px] font-bold uppercase`}
+                          className="bg-primary-container text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase"
                         >
                           {item.category}
                         </span>
